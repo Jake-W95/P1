@@ -10,8 +10,7 @@ class Card{
         this.weightc= weight;
     }
 }
-const hand1 = [];
-const hand2 = [];
+
 
 let ch1 = new Card('Steve',100,48,180,100);
 let ch2 = new Card('Lucy', 91,60,185,69);
@@ -20,7 +19,8 @@ let ch4 = new Card('Marcus',200, 105, 82, 30);
 
 const deck = [ch1, ch2,  ch3, ch4];
 
-shuffle(deck)
+// shuffle(deck)
+deal(deck)
 
 
 

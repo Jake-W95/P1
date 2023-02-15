@@ -1,3 +1,4 @@
+
 function shuffle (deck) {
     let index = deck.length,  
         randomIndex;
@@ -9,6 +10,8 @@ function shuffle (deck) {
             [deck[index], deck[randomIndex]] = [deck[randomIndex], deck[index]]
         }
         return deck
+
+        deal(deck)
 }
 
 module.exports = shuffle
