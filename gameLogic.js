@@ -1,4 +1,3 @@
-const inquirer = require('inquirer');
 
 const shuffle = require('./shuffleFunc');
 const deal = require('./dealFunc');
@@ -11,7 +10,9 @@ class Card {
         this.speed = speed;
         this.height = height;
         this.weight = weight;
+
     }
+    
 }
 
 let ch1 = new Card('Steve', 100, 48, 180, 100);
