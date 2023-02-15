@@ -1,33 +1,36 @@
 const inquirer = require('inquirer');
 
-
-function round (hand1, hand2) {
-
-const characterName = hand1[0].name;
-// const characterStrength = ;
-
-
+function round(hand1, hand2) {
     const roundQ = {
         name: 'round',
-        message: characterName,
+        message: hand1[0].name,
         type: 'list',
         choices: [
-            'strength: ' + hand1[0].strength,
-            'speed: ' + hand1[0].speed,
-            'height: ' + hand1[0].height,
-            'weight: ' + hand1[0].weight        ]
+            'Str: ' + hand1[0].strength,
+            'Spd: ' + hand1[0].speed,
+            'Hei: ' + hand1[0].height,
+            'Wei: ' + hand1[0].weight
+        ]
     }
-    console.log(hand1)
-    if (hand1.length > 0 && hand2.length > 0){
-
-        // console.log(hand1[0])
+    const roundAI = new Map([
+        ['Str', hand2[0].strength],
+        ['Spd', hand2[0].speed],
+        ['Hei', hand2[0].height],
+        ['Wei', hand2[0].weight]
+    ])
+    if (hand1.length > 0 && hand2.length > 0) {
         inquirer.prompt(roundQ)
-        .then((res) => {
-        
-            console.log(res)
-        
-        })
+            .then((playerChoice) => {
+                const pAtt = playerChoice.round.slice(0, 3)
+                const pNum = parseInt(playerChoice.round.slice(5));
+                
+                const aiNum = roundAI.get(pAtt)
+                console.log(hand2[0].name + ' ' +pAtt + ':' + aiNum)
+
+                pNum > aiNum ? console.log('You win this card') : console.log('You lose this card')
+                })
+            } 
     }
-}
+
 
 module.exports = round
