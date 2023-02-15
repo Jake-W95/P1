@@ -1,3 +1,6 @@
+const shuffle = require('./shuffleFunc');
+const deal = require('./dealFunc')
+
 class Card{
     constructor(name, strength, speed, height, weight){
         this.name = name
@@ -17,21 +20,10 @@ let ch4 = new Card('Marcus',200, 105, 82, 30);
 
 const deck = [ch1, ch2,  ch3, ch4];
 
-
-function deal () {
-    for(C of deck){
-        if(hand1.length <= hand2.length){
-            hand1.push(C)
-        } else {
-            hand2.push(C)
-        }
-    }
-
-console.log(hand1)
-}
+shuffle(deck)
 
 
 
 
 
-deal()
+
