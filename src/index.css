@@ -5,10 +5,22 @@
 
 :root {
   --white: #fff;
-  --red: #e93f33;
+  --red: #e23d31;
   --black: #0f0f0f;
   --spacing: 50px;
   --sm-spacing: 30px;
+}
+
+/* || ANIMATIONS */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(1%);
+    opacity: 1;
+  }
 }
 
 /* --- RESETS --- */
@@ -26,7 +38,7 @@ body,
 }
 
 body {
-  font-family: "Titillium", sans-serif;
+  font-family: "Titillium Web", sans-serif;
   background-color: var(--white);
 }
 
@@ -48,22 +60,24 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 70px;
 }
 
 .logo {
-  height: 30px;
+  height: 35px;
+  z-index: 3;
 }
 
 .links {
   display: none;
   position: absolute;
-  top: 80px;
+  top: 67px;
   right: 0px;
   background-color: var(--red);
   width: 100%;
   padding: 10px;
-  z-index: 999;
-  border-radius: 10px;
+  z-index: 2;
+  border-radius: 0px 0px 25px 25px;
 }
 
 .links a {
@@ -76,10 +90,6 @@ header {
   position: relative;
 }
 
-/* .links a:hover {
-  color: var(--black);
-} */
-
 .links.open {
   display: block;
   animation: slideDown 0.5s ease-in-out forwards;
@@ -90,6 +100,7 @@ header {
   border: none;
   font-size: 16px;
   cursor: pointer;
+  z-index: 3;
 }
 
 .open-menu,
@@ -107,7 +118,7 @@ header {
   background-color: transparent;
 }
 
-/* || MEDIA QUERIES FOR LARGER SCREENS */
+/* --- || MEDIA QUERIES FOR LARGER SCREENS --- */
 @media (min-width: 750px) {
   .links {
     display: flex;
@@ -121,13 +132,27 @@ header {
   }
 
   .links a {
-    padding: 0px;
+    padding: 5px 0px;
     margin-left: 3px;
-    font-size: 15px;
+    font-size: 16px;
+    white-space: nowrap;
   }
 
   .links a:not(:last-child) {
     margin-right: 20px;
+  }
+
+  .links a:last-child {
+    background-color: var(--white);
+    color: var(--red);
+    border-radius: 5px;
+    padding: 5px 20px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .links a:last-child:hover {
+    background-color: var(--black);
+    color: var(--white);
   }
 
   .links.open {
@@ -138,10 +163,10 @@ header {
     display: none;
   }
 
-  .links a:before {
+  .links a:not(:last-child):before {
     content: "";
     position: absolute;
-    bottom: -5px;
+    bottom: 0px;
     left: 0;
     width: 0;
     height: 2px;
@@ -153,16 +178,21 @@ header {
     width: 100%;
   }
 
-  .links a.active:before {
+  .links a.active:not(:last-child):before {
     content: "";
     position: absolute;
-    bottom: -5px;
+    bottom: 0px;
     left: 0;
     width: 0;
     height: 2px;
     background-color: var(--white);
     transition: width 0.3s ease-in-out;
     width: 100%;
+  }
+
+  .links a.active:last-child {
+    background-color: var(--black);
+    color: var(--white);
   }
 
   .open,

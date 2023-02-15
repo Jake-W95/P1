@@ -20,7 +20,7 @@ const NavLinks = () => {
           Standings
         </NavLink>
         <NavLink to="/game" onClick={() => setIsMenuOpen(false)}>
-          Play
+          Play Now
         </NavLink>
       </nav>
     </>
