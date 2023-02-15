@@ -4,7 +4,7 @@ function round(hand1, hand2) {
     var i = 0;
     var j = 0;
     function play() {
-        console.log(i, j)
+        console.log('i = ' + i,'j = ' + j)
         const roundU = {
             name: 'round',
             message: hand1[i].name,
@@ -23,13 +23,14 @@ function round(hand1, hand2) {
             ['Wei', hand2[j].weight]
         ]);
 
-        function lostRound() {
-            console.log('You lose this card')
+        function wonRound() {
+            hand1.splice(i, 0, hand2.splice(j, 1))
+            console.log('You win this card', 'hand1 ' + hand1, 'hand2 ' + hand2)
             nextRound()
         }
-        function wonRound() {
-            console.log('You win this card')
-
+        function lostRound() {
+            hand2.splice(j,0,hand1.splice(i, 1))
+            console.log('You lose this card', 'hand1 ' + hand1, 'hand2 ' + hand2)
             nextRound()
         }
         function nextRound() {
@@ -50,7 +51,7 @@ function round(hand1, hand2) {
         if (hand1.length > 0 && hand2.length > 0) {
 
 
-            console.log(hand1.length, hand2.length)
+            console.log('H1 length: ' + hand1.length, 'H2 length: ' + hand2.length)
             inquirer.prompt(roundU)
                 .then((playerChoice) => {
                     const pAtt = playerChoice.round.slice(0, 3)
@@ -65,6 +66,8 @@ function round(hand1, hand2) {
 
                 })
 
+        } else {
+            console.log('Game Over')
         }
 
     }
