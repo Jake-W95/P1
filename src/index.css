@@ -1,12 +1,202 @@
-/* --- GLOBAL STYLES--- */
-
 /* || FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
 
 /* || VARIABLES */
 
+:root {
+  --white: #fff;
+  --red: #e23d31;
+  --black: #0f0f0f;
+  --spacing: 50px;
+  --sm-spacing: 30px;
+}
+
+/* || ANIMATIONS */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(1%);
+    opacity: 1;
+  }
+}
+
+/* --- RESETS --- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  background-color: var(--white);
+}
+
+/* --- GLOBAL STYLES--- */
+
 /* || MOBILE STYLES */
+::selection {
+  background-color: var(--red);
+  color: var(--white);
+}
 
 .page-title {
 }
 
-/* || MEDIA QUERIES FOR LARGER SCREENS */
+/* --- HEADER ---  */
+header {
+  padding: var(--sm-spacing) var(--spacing);
+  background-color: var(--red);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  height: 35px;
+  z-index: 3;
+}
+
+.links {
+  display: none;
+  position: absolute;
+  top: 67px;
+  right: 0px;
+  background-color: var(--red);
+  width: 100%;
+  padding: 10px;
+  z-index: 2;
+  border-radius: 0px 0px 25px 25px;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.links.open {
+  display: block;
+  animation: slideDown 0.5s ease-in-out forwards;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.open-menu,
+.close-menu {
+  height: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.close-menu {
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+.links .closed {
+  background-color: transparent;
+}
+
+/* --- || MEDIA QUERIES FOR LARGER SCREENS --- */
+@media (min-width: 750px) {
+  .links {
+    display: flex;
+    background-color: var(--white);
+    justify-content: flex-end;
+    position: relative;
+    top: auto;
+    width: 0;
+    left: 0;
+    padding: 0 10px;
+  }
+
+  .links a {
+    padding: 5px 0px;
+    margin-left: 3px;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .links a:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .links a:last-child {
+    background-color: var(--white);
+    color: var(--red);
+    border-radius: 5px;
+    padding: 5px 20px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .links a:last-child:hover {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .dropdown-toggle {
+    display: none;
+  }
+
+  .links a:not(:last-child):before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.3s ease-in-out;
+  }
+
+  .links a:hover:before {
+    width: 100%;
+  }
+
+  .links a.active:not(:last-child):before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .links a.active:last-child {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .open,
+  .closed {
+    padding: 0;
+  }
+}
