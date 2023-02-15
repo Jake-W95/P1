@@ -9,8 +9,8 @@ function deal(deck) {
             hand2.push(C)
         }
     }
-
-    console.log(hand1, '1', hand2, 'h2')
+    // console.log(hand1, '1', hand2, 'h2')
+    return [hand1, hand2]
 }
 
 module.exports = deal
