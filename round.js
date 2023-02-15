@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 
 function round(hand1, hand2) {
-    const roundQ = {
+    const roundU = {
         name: 'round',
         message: hand1[0].name,
         type: 'list',
@@ -18,16 +18,24 @@ function round(hand1, hand2) {
         ['Hei', hand2[0].height],
         ['Wei', hand2[0].weight]
     ])
+
+    function lostRound () {
+        console.log('You lose this card')
+
+    }
+    function wonRound () {
+        console.log('You win this card')
+    }
     if (hand1.length > 0 && hand2.length > 0) {
-        inquirer.prompt(roundQ)
+        inquirer.prompt(roundU)
             .then((playerChoice) => {
                 const pAtt = playerChoice.round.slice(0, 3)
                 const pNum = parseInt(playerChoice.round.slice(5));
                 
                 const aiNum = roundAI.get(pAtt)
                 console.log(hand2[0].name + ' ' +pAtt + ':' + aiNum)
-
-                pNum > aiNum ? console.log('You win this card') : console.log('You lose this card')
+                                                                        //Win/Lose state
+                pNum > aiNum ? wonRound() : lostRound()
                 })
             } 
     }
