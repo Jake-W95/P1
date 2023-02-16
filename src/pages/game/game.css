@@ -1,9 +1,121 @@
 /* --- GAME STYLES--- */
 
-/* || FONTS */
-
-/* || VARIABLES */
-
 /* || MOBILE STYLES */
 
 /* || MEDIA QUERIES FOR LARGER SCREENS */
+
+.game-container {
+}
+
+/* --- CARD STYLES --- */
+
+.card-container {
+  height: 530px;
+  display: flex;
+  justify-content: center;
+}
+
+.driver-image {
+  height: 200px;
+  padding-top: 10px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.driver-wrap {
+  height: 40%;
+  background-color: var(--black);
+  border-radius: 10px;
+}
+
+.name {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.name-banner {
+  background-color: var(--black);
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.team-logo {
+  height: 50px;
+  position: absolute;
+  margin: 10px;
+}
+
+.card-brand {
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 25px;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+.divider {
+  border-bottom: 1px dotted var(--white);
+  margin: 5px 0;
+}
+
+.stat-wrap {
+  display: flex;
+  color: var(--black);
+  white-space: nowrap;
+  align-items: center;
+}
+
+.stat-title {
+  background-color: var(--white);
+  border-radius: 0px 100px 100px 0px;
+  padding: 5px;
+  width: 100%;
+}
+
+.data {
+  font-weight: 700;
+  font-size: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--white);
+}
+
+.front {
+  z-index: 3;
+}
+
+.back {
+  background-image: url("../../../public/images/back.svg");
+  background-position: center;
+  background-size: cover;
+  height: 567px;
+}
+
+.front,
+.back {
+  cursor: pointer;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.2s;
+
+  background-color: var(--red);
+  width: 350px;
+  border: solid 2px var(--white);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  scale: 0.9;
+}

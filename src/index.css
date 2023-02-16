@@ -6,7 +6,7 @@
 :root {
   --white: #fff;
   --red: #e23d31;
-  --black: #0f0f0f;
+  --black: #15151e;
   --spacing: 50px;
   --sm-spacing: 30px;
 }
@@ -65,7 +65,7 @@ header {
 
 .logo {
   height: 35px;
-  z-index: 3;
+  z-index: 6;
 }
 
 .links {
@@ -76,7 +76,7 @@ header {
   background-color: var(--red);
   width: 100%;
   padding: 10px;
-  z-index: 2;
+  z-index: 5;
   border-radius: 0px 0px 25px 25px;
 }
 
@@ -100,7 +100,7 @@ header {
   border: none;
   font-size: 16px;
   cursor: pointer;
-  z-index: 3;
+  z-index: 6;
 }
 
 .open-menu,
