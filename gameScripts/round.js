@@ -46,7 +46,6 @@ function round(hand1, hand2) {
             nextRound()
         }
         function nextRound() {
-           
             if (i === hand1.length) {
                 i = 0
             } else if (hand1.length == 0) {
@@ -58,11 +57,10 @@ function round(hand1, hand2) {
                 j = 0
             } else if(hand2.length === 0){
                 return console.log('You Won')
-            } {
+            } else {
                 j++
             }
-      
-
+    
         }
         if (hand1.length > 0 && hand2.length > 0) {
 

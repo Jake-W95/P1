@@ -1,7 +1,7 @@
 
-const shuffle = require('./shuffleFunc');
-const deal = require('./dealFunc');
-const round = require('./round');
+const shuffle = require('../gameScripts/shuffleFunc');
+const deal = require('../gameScripts/dealFunc');
+const round = require('../gameScripts/round');
 
 class Card {
     constructor(name, strength, speed, height, weight) {
