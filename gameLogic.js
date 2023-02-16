@@ -30,6 +30,7 @@ function startGame() {
     const deck = [ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8];
     // Results in 2 hands, shuffled
     const hands = deal(shuffle(deck));
+    
 
     const hand1 = hands[0]
     const hand2 = hands[1]

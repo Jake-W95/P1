@@ -4,8 +4,11 @@ function round(hand1, hand2) {
     var i = 0;
     var j = 0;
     function play() {
-        if (hand1 === 0 || hand2 === 0) {
-            return console.log('Game Over')
+        if(j === 8){
+            return console.log('GAME OVER: YOU LOST')
+        }
+        if(i === 8){
+            return console.log('YOU WON')
         }
         console.log('i = ' + i, 'j = ' + j)
         const roundU = {
@@ -27,17 +30,24 @@ function round(hand1, hand2) {
         ]);
 
         function wonRound() {
-            hand1.splice(i--, 0, hand2.splice(j, 1))
-            console.log('You win this card', 'hand1 ' + hand1, 'hand2 ' + hand2)
+            console.log('You win this card: ' + hand2[j].name);
+            hand1.splice(i++, 0, hand2.splice(j--, 1));
+            console.log(`You now have ${hand1.length} cards`)
+            //  'hand1 ' + hand1, 'hand2 ' + hand2
+             
             nextRound()
         }
         function lostRound() {
-            hand2.splice(j--, 0, hand1.splice(i, 1))
-            console.log('You lose this card', 'hand1 ' + hand1, 'hand2 ' + hand2)
+            console.log('You lose this card: ' + hand1[i].name);
+            hand2.splice(j++, 0, hand1.splice(i--, 1));
+            console.log(`You have ${hand1.length} cards remaining`)
+            //  'hand1 ' + hand1, 'hand2 ' + hand2
+             
             nextRound()
         }
         function nextRound() {
-            if (i === hand1.length - 1) {
+           
+            if (i === hand1.length) {
                 i = 0
             } else if (hand1.length == 0) {
                 return console.log('You Lost')
@@ -51,14 +61,13 @@ function round(hand1, hand2) {
             } {
                 j++
             }
-            // i === 
-            // j === 
+      
 
         }
         if (hand1.length > 0 && hand2.length > 0) {
 
 
-            console.log('H1 length: ' + hand1.length, 'H2 length: ' + hand2.length)
+            // console.log('H1 length: ' + hand1.length, 'H2 length: ' + hand2.length)
             inquirer.prompt(roundU)
                 .then((playerChoice) => {
                     const pAtt = playerChoice.round.slice(0, 3)
@@ -74,10 +83,7 @@ function round(hand1, hand2) {
                 })
 
         }
-        // else {
-        //     console.log('Game Over')
-        // }
-
+      
     }
 
     play()
