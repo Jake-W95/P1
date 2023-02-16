@@ -57,8 +57,8 @@ const TrumpCard = ({ player }) => {
     >
       <motion.div className="front" onClick={flipCard} layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
         <div className="driver-wrap">
-          <img className="team-logo" src="../../../images/teams/mercedes.svg" alt="Team" />
-          <img className="driver-image" src="../../images/drivers/lewis.png" alt="Driver" />
+          <img className="team-logo" src="../../../images/teams/mclaren.svg" alt="Team" />
+          <img className="driver-image" src="../../images/drivers/zhou.svg" alt="Driver" />
           <img className="card-brand" src="../../images/logo2.svg" alt="Team" />
 
           <div className="name-banner">

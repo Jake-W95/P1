@@ -46,7 +46,8 @@
 }
 
 .team-logo {
-  height: 50px;
+  max-height: 80px;
+  max-width: 100px;
   position: absolute;
   margin: 10px;
 }
