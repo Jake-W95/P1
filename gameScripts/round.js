@@ -4,10 +4,10 @@ function round(hand1, hand2) {
     var i = 0;
     var j = 0;
     function play() {
-        if(j === 8){
+        if (j === 8) {
             return console.log('GAME OVER: YOU LOST')
         }
-        if(i === 8){
+        if (i === 8) {
             return console.log('YOU WON')
         }
         console.log('i = ' + i, 'j = ' + j)
@@ -34,33 +34,29 @@ function round(hand1, hand2) {
             hand1.splice(i++, 0, hand2.splice(j--, 1));
             console.log(`You now have ${hand1.length} cards`)
             //  'hand1 ' + hand1, 'hand2 ' + hand2
-             
-            nextRound()
+
+            nextRoundU()
         }
         function lostRound() {
             console.log('You lose this card: ' + hand1[i].name);
             hand2.splice(j++, 0, hand1.splice(i--, 1));
             console.log(`You have ${hand1.length} cards remaining`)
             //  'hand1 ' + hand1, 'hand2 ' + hand2
-             
-            nextRound()
+
+            nextRoundU()
         }
-        function nextRound() {
+        function nextRoundU() {
             if (i === hand1.length) {
-                i = 0
-            } else if (hand1.length == 0) {
-                return console.log('You Lost')
+                return i = 0
             } else {
                 i++
             }
-            if (j === hand2.length - 1) {
-                j = 0
-            } else if(hand2.length === 0){
-                return console.log('You Won')
-            } else {
+            if (j === hand2.length) {
+                return j = 0
+            }  else {
                 j++
             }
-    
+
         }
         if (hand1.length > 0 && hand2.length > 0) {
 
@@ -81,7 +77,7 @@ function round(hand1, hand2) {
                 })
 
         }
-      
+
     }
 
     play()
