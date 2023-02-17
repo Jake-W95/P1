@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import TrumpCard from "../../components/TrumpCard";
 import "./game.css";
@@ -13,11 +13,15 @@ import shuffleDeal from "../../gameScripts/gameLogic";
 // console.log(hand1)
 
 
-
+const hands = shuffleDeal()
 const Game = () => {
-  const hands = shuffleDeal()
+  // useEffect(()=> setHands(shuffleDeal()), [hands])
+
+  // const [hands, setHands] = useState([])
   const hand1 = hands[0];
   const hand2 = hands[1]
+
+  console.log(hands)
                                 // States Getting User's chosen Att Name and Value
   const [userAttVal, setUserAttVal] = useState(undefined)
   const [userAttName, setUserAttName] = useState(undefined)
