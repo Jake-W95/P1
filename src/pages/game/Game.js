@@ -36,7 +36,7 @@ const Game = () => {
   const getAIVal = (AIAttVal) => { setAIAttVal(AIAttVal) }
 
   // Value Comparison
-  let WLD = 'Hi'
+  const WLD = ''
   if (userAttVal > AIAttVal) {
     WLD = 'YOU WIN'
   } else if (userAttVal < AIAttVal) {
