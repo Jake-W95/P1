@@ -119,6 +119,13 @@ header {
   background-color: transparent;
 }
 
+.item {
+  stroke: white;
+  stroke-width: 8;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
 /* --- || MEDIA QUERIES FOR LARGER SCREENS --- */
 @media (min-width: 750px) {
   .links {
@@ -130,6 +137,7 @@ header {
     width: 0;
     left: 0;
     padding: 0 10px;
+    margin-right: 12px;
   }
 
   .links a {
