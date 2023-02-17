@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const TrumpCard = ({ player }) => {
+
+const TrumpCard = ({ player, hand }) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -62,7 +63,7 @@ const TrumpCard = ({ player }) => {
           <img className="card-brand" src="../../images/logo2.svg" alt="Team" />
 
           <div className="name-banner">
-            <span className="name">Lewis Hamilton</span>
+            <span className="name">{hand.name}</span>
           </div>
         </div>
         <div className="stats-container">

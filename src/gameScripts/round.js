@@ -92,8 +92,8 @@ function round(hand1, hand2) {
 
 
             // THIS IS THE ACTUAL GAME, OBVIOUSLY NEEDS TO BE CHANGED FROM INQUIRER 
-            inquirer.prompt(round)
-                .then((playerChoice) => {
+            // inquirer.prompt(round)
+                // .then((playerChoice) => {
                                     //pAtt TAKES THE FIRST 3 CHARS OF THE STRING TO SEE WHICH ATTRIBUTE WAS PLAYED  
                     const pAtt = playerChoice.round.slice(0, 3)
                                     //pNum TURNS THE STRING VALUE INTO A NUMERIC VALUE
@@ -107,7 +107,7 @@ function round(hand1, hand2) {
                     
                     play()
 
-                })
+                // })
 
         }
 
@@ -118,4 +118,4 @@ function round(hand1, hand2) {
 }
 
 
-module.exports = round
+module.exports=round
