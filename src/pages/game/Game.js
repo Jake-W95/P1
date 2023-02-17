@@ -21,7 +21,9 @@ const Game = () => {
   const hand1 = hands[0];
   const hand2 = hands[1]
 
-  console.log(hands)
+  
+
+
   // States Getting User's chosen Att Name and Value
   const [userAttVal, setUserAttVal] = useState(undefined)
   const [userAttName, setUserAttName] = useState(undefined)
@@ -36,7 +38,7 @@ const Game = () => {
   const getAIVal = (AIAttVal) => { setAIAttVal(AIAttVal) }
 
   // Value Comparison
-  const WLD = ''
+  let WLD = ''
   if (userAttVal > AIAttVal) {
     WLD = 'YOU WIN'
   } else if (userAttVal < AIAttVal) {
@@ -44,6 +46,12 @@ const Game = () => {
   } else if (userAttVal === AIAttVal && userAttName != undefined) {
     WLD = 'DRAW'
   }
+
+  let [i, seti] = useState(0)
+  let [j, setj] = useState(0)
+  const increment = () => {seti(i++); setj(j++); console.log('i' + i,' j ' + j)}
+
+
   return (
     <section className="game-container">
       <h1>{WLD}</h1>
@@ -51,10 +59,10 @@ const Game = () => {
       <h1>{AIAttVal}</h1>
       <div className="row">
         <div className="col-12 col-md-6">
-          <TrumpCard player="user" card={hand1[0]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} />
+          <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} increment={increment} />
         </div>
         <div className="col-12 col-md-6">
-          <TrumpCard player="computer" card={hand2[0]} userAttName={userAttName} getAIAttVal={getAIVal} />
+          <TrumpCard player="computer" card={hand2[j]} userAttName={userAttName} getAIAttVal={getAIVal} />
         </div>
       </div>
     </section>
