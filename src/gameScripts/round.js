@@ -118,4 +118,4 @@ function round(hand1, hand2) {
 }
 
 
-module.exports=round
+module.exports = round
