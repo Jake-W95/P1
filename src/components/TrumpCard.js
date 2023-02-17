@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-const TrumpCard = ({ player, card, userAttVal }) => {
+const TrumpCard = ({ player, card, userAttVal, userAttName }) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -62,7 +62,12 @@ const TrumpCard = ({ player, card, userAttVal }) => {
   // const selectedAttName = isChosenAttName;
   // const selectedAttVal = isChosenAttVal;
 
-const EXP = card.experience
+const EXP = card.experience;
+const TRK = card.teamRanking;
+const WIN = card.wins;
+const POD = card.podiums;
+// const CHA = card.championships;
+// const RTG = card.rating;
 
   return (
     <motion.div
@@ -87,22 +92,22 @@ const EXP = card.experience
           </div>
         </div>
         <div className="stats-container" >
-          <div className="stat-wrap" onClick={() => userAttVal(EXP)}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {userAttVal(EXP); userAttName('Experience')}}/*onClick={flipCard}*/>
             <p className="stat-title">Experience</p>
             <p className="data experience" >{card.experience}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" /*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {userAttVal(TRK); userAttName('Team Ranking')}}/*onClick={flipCard}*/>
             <p className="stat-title">Team Ranking</p>
             <p className="data team">{card.teamRanking}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" /*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {userAttVal(WIN); userAttName('# of Wins')}}/*onClick={flipCard}*/>
             <p className="stat-title">Wins:</p>
             <p className="data wins">{card.wins}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" /*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {userAttVal(POD); userAttName('Podiums')}}/*onClick={flipCard}*/>
             <p className="stat-title">Podiums</p>
             <p className="data podiums">{card.podiums}</p>
           </div>

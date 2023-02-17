@@ -19,9 +19,11 @@ const Game = () => {
   const hand1 = hands[0];
   const hand2 = hands[1]
 
-  const [attVal, setAttVal] = useState(Number)
+  const [attVal, setAttVal] = useState(undefined)
+  const [attName, setAttName] = useState(undefined)
 
   const userAttVal = (attVal) => {setAttVal(attVal)}
+  const userAttName = (attName) => {setAttName(attName)}
 
 
   return (
@@ -29,7 +31,8 @@ const Game = () => {
       <div className="row">
         <div className="col-12 col-md-6">
       <h1>{attVal}</h1>
-          <TrumpCard player="user" card={hand1[0]} userAttVal={userAttVal} />
+      <h1>{attName}</h1>
+          <TrumpCard player="user" card={hand1[0]} userAttVal={userAttVal} userAttName={userAttName}/>
         </div>
         <div className="col-12 col-md-6">
           <TrumpCard player="computer" card={hand2[0]} />
