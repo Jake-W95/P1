@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-const TrumpCard = ({ player, card, getUserAttVal, getUserAttName }) => {
+const TrumpCard = ({ player, card, getUserAttVal, getUserAttName, userAttName, getAIAttVal}) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -55,12 +55,7 @@ const TrumpCard = ({ player, card, getUserAttVal, getUserAttName }) => {
 
   // To be re-declared as attribute is chosen
   
-  // const [isChosenAttName, setIsChosenAttName] = useState('')
-  // const [isChosenAttVal, setIsChosenAttVal] = useState(0)
-  // function chooseAttExp  () {/*setIsChosenAttName('experience')*/ userAttVal(card.experience)}
-  // Variable to be sent to Game for comparison
-  // const selectedAttName = isChosenAttName;
-  // const selectedAttVal = isChosenAttVal;
+
 
 const EXP = card.experience;
 const TRK = card.teamRanking;
@@ -68,6 +63,14 @@ const WIN = card.wins;
 const POD = card.podiums;
 // const CHA = card.championships;
 // const RTG = card.rating;
+
+
+if(userAttName === 'Experience'){ getAIAttVal(EXP)};
+if(userAttName === 'Team Ranking'){ getAIAttVal(TRK)};
+if(userAttName === '# of Wins'){ getAIAttVal(WIN)};
+if(userAttName === 'Podiums'){ getAIAttVal(POD)};
+
+
 
   return (
     <motion.div
@@ -80,8 +83,8 @@ const POD = card.podiums;
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
       <motion.div className="front" layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
-        {/* <h1>{selectedAttName}</h1>
-        <h1>{selectedAttVal}</h1> */}
+         <h1>{userAttName}</h1>
+        
         <div className="driver-wrap">
           <img className="team-logo" src="../../../images/teams/mercedes.svg" alt="Team" />
           <img className="driver-image" src="../../images/drivers/lewis.png" alt="Driver" />

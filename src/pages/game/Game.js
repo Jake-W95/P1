@@ -34,10 +34,11 @@ const Game = () => {
 
   return (
     <section className="game-container">
-      <div className="row">
-        <div className="col-12 col-md-6">
       <h1>{userAttVal}</h1>
       <h1>{userAttName}</h1>
+      <h1>{AIAttVal}</h1>
+      <div className="row">
+        <div className="col-12 col-md-6">
           <TrumpCard player="user" card={hand1[0]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName}/>
         </div>
         <div className="col-12 col-md-6">
