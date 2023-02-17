@@ -27,7 +27,7 @@ function round(hand1, hand2) {
                 'TMR: ' + hand1[i].teamRanking,
                 'WIN: ' + hand1[i].wins,
                 'POD: ' + hand1[i].podiums,
-                'CHA: ' + hand1[i].champiosnhips,
+                'CHA: ' + hand1[i].championships,
                 'RAT: ' + hand1[i].rating,
             ]
         };
@@ -37,7 +37,7 @@ function round(hand1, hand2) {
             ['TMR', hand2[j].teamRanking],
             ['WIN', hand2[j].wins],
             ['POD', hand2[j].podiums],
-            ['CHA', hand2[j].champiosnhips],
+            ['CHA', hand2[j].championships],
             ['RAT', hand2[j].rating]
         ]);
         // WIN CONDITION

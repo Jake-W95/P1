@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-const TrumpCard = ({ player }) => {
+const TrumpCard = ( {player, card}   ) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
   });
 
+
+  console.log(card)
   const [isFlipped, setIsFlipped] = useState(false);
 
   const flipCard = () => setIsFlipped(!isFlipped);
@@ -19,11 +21,11 @@ const TrumpCard = ({ player }) => {
   };
 
   // Dumb data
-  const experience = 310;
-  const teamRanking = 3;
-  const wins = 103;
-  const podiums = 191;
-  const championships = 7;
+  // const experience = 310;
+  // const teamRanking = 3;
+  // const wins = 103;
+  // const podiums = 191;
+  // const championships = 7;
 
   const driverRating = (function () {
     const winPercentage = (wins / experience) * 100;
@@ -63,7 +65,7 @@ const TrumpCard = ({ player }) => {
           <img className="card-brand" src="../../images/logo2.svg" alt="Team" />
 
           <div className="name-banner">
-            <span className="name">Dave</span>
+            <span className="name">{card.name}</span>
           </div>
         </div>
         <div className="stats-container">
