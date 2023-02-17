@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-const TrumpCard = ({ player, card, userAttVal, userAttName }) => {
+const TrumpCard = ({ player, card, getUserAttVal, getUserAttName }) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -92,22 +92,22 @@ const POD = card.podiums;
           </div>
         </div>
         <div className="stats-container" >
-          <div className="stat-wrap" onClick={() => {userAttVal(EXP); userAttName('Experience')}}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {getUserAttVal(EXP); getUserAttName('Experience')}}/*onClick={flipCard}*/>
             <p className="stat-title">Experience</p>
             <p className="data experience" >{card.experience}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" onClick={() => {userAttVal(TRK); userAttName('Team Ranking')}}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {getUserAttVal(TRK); getUserAttName('Team Ranking')}}/*onClick={flipCard}*/>
             <p className="stat-title">Team Ranking</p>
             <p className="data team">{card.teamRanking}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" onClick={() => {userAttVal(WIN); userAttName('# of Wins')}}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {getUserAttVal(WIN); getUserAttName('# of Wins')}}/*onClick={flipCard}*/>
             <p className="stat-title">Wins:</p>
             <p className="data wins">{card.wins}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" onClick={() => {userAttVal(POD); userAttName('Podiums')}}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {getUserAttVal(POD); getUserAttName('Podiums')}}/*onClick={flipCard}*/>
             <p className="stat-title">Podiums</p>
             <p className="data podiums">{card.podiums}</p>
           </div>
