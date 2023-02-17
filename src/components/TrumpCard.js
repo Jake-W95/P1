@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-const TrumpCard = ({ player, card }) => {
+const TrumpCard = ({ player, card, userAttVal }) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -51,16 +51,18 @@ const TrumpCard = ({ player, card }) => {
 
 
   // Function logs experience value
-  const getExpVal = () => { console.log(card.experience) }
+  // const getExpVal = () => { console.log(card.experience) }
 
   // To be re-declared as attribute is chosen
   
-  const [isChosenAttName, setIsChosenAttName] = useState('')
-  const [isChosenAttVal, setIsChosenAttVal] = useState(0)
-  function chooseAttExp  () {setIsChosenAttName('experience'); setIsChosenAttVal(card.experience)}
+  // const [isChosenAttName, setIsChosenAttName] = useState('')
+  // const [isChosenAttVal, setIsChosenAttVal] = useState(0)
+  // function chooseAttExp  () {/*setIsChosenAttName('experience')*/ userAttVal(card.experience)}
   // Variable to be sent to Game for comparison
-  const selectedAttName = isChosenAttName;
-  const selectedAttVal = isChosenAttVal;
+  // const selectedAttName = isChosenAttName;
+  // const selectedAttVal = isChosenAttVal;
+
+const EXP = card.experience
 
   return (
     <motion.div
@@ -73,8 +75,8 @@ const TrumpCard = ({ player, card }) => {
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
       <motion.div className="front" layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
-        <h1>{selectedAttName}</h1>
-        <h1>{selectedAttVal}</h1>
+        {/* <h1>{selectedAttName}</h1>
+        <h1>{selectedAttVal}</h1> */}
         <div className="driver-wrap">
           <img className="team-logo" src="../../../images/teams/mercedes.svg" alt="Team" />
           <img className="driver-image" src="../../images/drivers/lewis.png" alt="Driver" />
@@ -85,7 +87,7 @@ const TrumpCard = ({ player, card }) => {
           </div>
         </div>
         <div className="stats-container" >
-          <div className="stat-wrap" onClick={chooseAttExp}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => userAttVal(EXP)}/*onClick={flipCard}*/>
             <p className="stat-title">Experience</p>
             <p className="data experience" >{card.experience}</p>
           </div>
