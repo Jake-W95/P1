@@ -9,10 +9,13 @@ const TrumpCard = ( {player, card}   ) => {
     triggerOnce: true,
   });
 
-  console.log(card)
+  // console.log(card)
   const [isFlipped, setIsFlipped] = useState(false);
 
   const flipCard = () => setIsFlipped(!isFlipped);
+
+  const getExpVal = () => { console.log(card.experience)}
+  
 
   const variants = {
     hidden: { x: player === "user" ? "-50vw" : "50vw", opacity: 0 },
@@ -68,32 +71,32 @@ const TrumpCard = ( {player, card}   ) => {
           </div>
         </div>
         <div className="stats-container" >
-          <div className="stat-wrap" onClick={flipCard}>
+          <div className="stat-wrap" onClick={getExpVal}/*onClick={flipCard}*/>
             <p className="stat-title">Experience</p>
-            <p className="data experience">{card.experience}</p>
+            <p className="data experience" >{card.experience}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" onClick={flipCard}>
+          <div className="stat-wrap" /*onClick={flipCard}*/>
             <p className="stat-title">Team Ranking</p>
             <p className="data team">{card.teamRanking}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" onClick={flipCard}>
+          <div className="stat-wrap" /*onClick={flipCard}*/>
             <p className="stat-title">Wins:</p>
             <p className="data wins">{card.wins}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" onClick={flipCard}>
+          <div className="stat-wrap" /*onClick={flipCard}*/>
             <p className="stat-title">Podiums</p>
             <p className="data podiums">{card.podiums}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" onClick={flipCard}>
+          <div className="stat-wrap" /*onClick={flipCard}*/>
             <p className="stat-title">Championships</p>
             <p className="data championships">{card.championships}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" onClick={flipCard}>
+          <div className="stat-wrap" /*onClick={flipCard}*/>
             <p className="stat-title">Rating</p>
             <p className="data score">{card.driverRating}</p>
           </div>
