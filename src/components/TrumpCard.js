@@ -9,7 +9,6 @@ const TrumpCard = ( {player, card}   ) => {
     triggerOnce: true,
   });
 
-
   console.log(card)
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -26,25 +25,25 @@ const TrumpCard = ( {player, card}   ) => {
   // const wins = 103;
   // const podiums = 191;
   // const championships = 7;
+      //////////////////////////////////////////////////////Rating Algorithm
+  // const driverRating = (function () {
+  //   const winPercentage = (wins / experience) * 100;
+  //   const podiumPercentage = (podiums / experience) * 100;
+  //   const calcExperience = 0.1 * experience;
+  //   const calcTeamRanking = 5 * (10 - teamRanking);
+  //   const calcWins = 0.8 * winPercentage;
+  //   const calcPodiums = 0.4 * podiumPercentage;
+  //   const calcChampionships = 0.8 * championships;
 
-  const driverRating = (function () {
-    const winPercentage = (wins / experience) * 100;
-    const podiumPercentage = (podiums / experience) * 100;
-    const calcExperience = 0.1 * experience;
-    const calcTeamRanking = 5 * (10 - teamRanking);
-    const calcWins = 0.8 * winPercentage;
-    const calcPodiums = 0.4 * podiumPercentage;
-    const calcChampionships = 0.8 * championships;
+  //   const rating = calcExperience + calcTeamRanking + calcWins + calcPodiums + calcChampionships;
 
-    const rating = calcExperience + calcTeamRanking + calcWins + calcPodiums + calcChampionships;
+  //   const cappedRating = Math.min(100, rating);
 
-    const cappedRating = Math.min(100, rating);
+  //   // console.log(rating);
+  //   // console.log(cappedRating);
 
-    // console.log(rating);
-    // console.log(cappedRating);
-
-    return Math.round(cappedRating);
-  })();
+  //   return Math.round(cappedRating);
+  // })();
 
   // console.log(isFlipped);
 
@@ -71,32 +70,32 @@ const TrumpCard = ( {player, card}   ) => {
         <div className="stats-container">
           <div className="stat-wrap">
             <p className="stat-title">Experience</p>
-            <p className="data experience">{experience}</p>
+            <p className="data experience">{card.experience}</p>
           </div>
           <div className="divider"></div>
           <div className="stat-wrap">
             <p className="stat-title">Team Ranking</p>
-            <p className="data team">{teamRanking}</p>
+            <p className="data team">{card.teamRanking}</p>
           </div>
           <div className="divider"></div>
           <div className="stat-wrap">
             <p className="stat-title">Wins:</p>
-            <p className="data wins">{wins}</p>
+            <p className="data wins">{card.wins}</p>
           </div>
           <div className="divider"></div>
           <div className="stat-wrap">
             <p className="stat-title">Podiums</p>
-            <p className="data podiums">{podiums}</p>
+            <p className="data podiums">{card.podiums}</p>
           </div>
           <div className="divider"></div>
           <div className="stat-wrap">
             <p className="stat-title">Championships</p>
-            <p className="data championships">{championships}</p>
+            <p className="data championships">{card.championships}</p>
           </div>
           <div className="divider"></div>
           <div className="stat-wrap">
             <p className="stat-title">Rating</p>
-            <p className="data score">{driverRating}</p>
+            <p className="data score">{card.driverRating}</p>
           </div>
         </div>
       </motion.div>
