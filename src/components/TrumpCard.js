@@ -57,43 +57,43 @@ const TrumpCard = ( {player, card}   ) => {
       animate={inView ? "visible" : "hidden"}
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
-      <motion.div className="front" onClick={flipCard} layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
+      <motion.div className="front"  layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
         <div className="driver-wrap">
           <img className="team-logo" src="../../../images/teams/mercedes.svg" alt="Team" />
           <img className="driver-image" src="../../images/drivers/lewis.png" alt="Driver" />
           <img className="card-brand" src="../../images/logo2.svg" alt="Team" />
 
           <div className="name-banner">
-            <span className="name">{card.name}</span>
+            <span className="name " >{card.name}</span>
           </div>
         </div>
-        <div className="stats-container">
-          <div className="stat-wrap">
+        <div className="stats-container" >
+          <div className="stat-wrap" onClick={flipCard}>
             <p className="stat-title">Experience</p>
             <p className="data experience">{card.experience}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap">
+          <div className="stat-wrap" onClick={flipCard}>
             <p className="stat-title">Team Ranking</p>
             <p className="data team">{card.teamRanking}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap">
+          <div className="stat-wrap" onClick={flipCard}>
             <p className="stat-title">Wins:</p>
             <p className="data wins">{card.wins}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap">
+          <div className="stat-wrap" onClick={flipCard}>
             <p className="stat-title">Podiums</p>
             <p className="data podiums">{card.podiums}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap">
+          <div className="stat-wrap" onClick={flipCard}>
             <p className="stat-title">Championships</p>
             <p className="data championships">{card.championships}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap">
+          <div className="stat-wrap" onClick={flipCard}>
             <p className="stat-title">Rating</p>
             <p className="data score">{card.driverRating}</p>
           </div>
