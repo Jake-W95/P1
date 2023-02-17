@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-const TrumpCard = ( {player, card}   ) => {
+const TrumpCard = ({player, card}) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
