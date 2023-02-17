@@ -94,14 +94,17 @@ function round(hand1, hand2) {
             // THIS IS THE ACTUAL GAME, OBVIOUSLY NEEDS TO BE CHANGED FROM INQUIRER 
             inquirer.prompt(round)
                 .then((playerChoice) => {
+                                    //pAtt TAKES THE FIRST 3 CHARS OF THE STRING TO SEE WHICH ATTRIBUTE WAS PLAYED  
                     const pAtt = playerChoice.round.slice(0, 3)
+                                    //pNum TURNS THE STRING VALUE INTO A NUMERIC VALUE
                     const pNum = parseInt(playerChoice.round.slice(5));
-
+                                    //aiNum MATCHES pAtt TO roundAI TO GET CORRESPONDING VALUE
                     const aiNum = roundAI.get(pAtt)
+                                    // LOGS DRIVER "Hamilton WIN: 10" - FOR EXAMPLE
                     console.log(hand2[j].name + ' ' + pAtt + ':' + aiNum)
                     //Win/Lose state
                     pNum > aiNum ? wonRound() : lostRound();
-                    // console.log(i, j)
+                    
                     play()
 
                 })
