@@ -1,3 +1,6 @@
+const driverData = require('../driver-data.json')
+
+                
                 // FUNCTION SHUFFLING ARRAY (deck) ORDER
 const shuffle = require('./shuffleFunc');
 
@@ -35,14 +38,14 @@ class Card {
 
 function startGame() {
                         // FULL LIST OF CARDS/DRIVERS USED
-    const deck = [/*List of Drivers Here*/];
-
+    const deck = driverData;
+console.log(deck[0].name)
                         // 'hands' BECOMES AN ARRAY CONTAINING 2 HANDS FROM A SHUFFLED 'deck'
-    const hands = deal(shuffle(deck));
+    // const hands = deal(shuffle(deck));
     
     const hand1 = hands[0]  //USER'S HAND
     const hand2 = hands[1]  //AI'S HAND
-    round(hand1, hand2)
+    // round(hand1, hand2)
 }
 startGame()
 
