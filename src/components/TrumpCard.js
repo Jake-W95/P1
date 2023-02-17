@@ -83,7 +83,7 @@ if(userAttName === 'Podiums'){ getAIAttVal(POD)};
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
       <motion.div className="front" layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
-         <h1>{userAttName}</h1>
+        
         
         <div className="driver-wrap">
           <img className="team-logo" src="../../../images/teams/mercedes.svg" alt="Team" />
