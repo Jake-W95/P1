@@ -33,9 +33,6 @@ class Card {
 // let ch7 = new Card('Alice', 74, 200, 52, 145);
 // let ch8 = new Card('Callum', 210, 120, 140, 175);
 
-
-
-
 function startGame() {
                         // FULL LIST OF CARDS/DRIVERS USED
     const deck = [/*List of Drivers Here*/];
