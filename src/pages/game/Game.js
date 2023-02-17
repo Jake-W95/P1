@@ -13,6 +13,9 @@ const hand2 = hands[1]
 // const hand2 = shuffleDeal()[1]
 // console.log(hand1)
 
+const userAttVal = Number;
+
+const setUserAttVal= () => userAttVal 
 const Game = () => {
 
 

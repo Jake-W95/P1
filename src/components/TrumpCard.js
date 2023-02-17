@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-const TrumpCard = ({player, card}) => {
+const TrumpCard = ({ player, card }) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -14,8 +14,6 @@ const TrumpCard = ({player, card}) => {
 
   const flipCard = () => setIsFlipped(!isFlipped);
 
-  const getExpVal = () => { console.log(card.experience)}
-  
 
   const variants = {
     hidden: { x: player === "user" ? "-50vw" : "50vw", opacity: 0 },
@@ -28,7 +26,7 @@ const TrumpCard = ({player, card}) => {
   // const wins = 103;
   // const podiums = 191;
   // const championships = 7;
-      //////////////////////////////////////////////////////Rating Algorithm
+  //////////////////////////////////////////////////////Rating Algorithm
   // const driverRating = (function () {
   //   const winPercentage = (wins / experience) * 100;
   //   const podiumPercentage = (podiums / experience) * 100;
@@ -50,6 +48,20 @@ const TrumpCard = ({player, card}) => {
 
   // console.log(isFlipped);
 
+
+
+  // Function logs experience value
+  const getExpVal = () => { console.log(card.experience) }
+
+  // To be re-declared as attribute is chosen
+  
+  const [isChosenAttName, setIsChosenAttName] = useState('')
+  const [isChosenAttVal, setIsChosenAttVal] = useState(0)
+  function chooseAttExp  () {setIsChosenAttName('experience'); setIsChosenAttVal(card.experience)}
+  // Variable to be sent to Game for comparison
+  const selectedAttName = isChosenAttName;
+  const selectedAttVal = isChosenAttVal;
+
   return (
     <motion.div
       className="card-container"
@@ -60,7 +72,9 @@ const TrumpCard = ({player, card}) => {
       animate={inView ? "visible" : "hidden"}
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
-      <motion.div className="front"  layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
+      <motion.div className="front" layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
+        <h1>{selectedAttName}</h1>
+        <h1>{selectedAttVal}</h1>
         <div className="driver-wrap">
           <img className="team-logo" src="../../../images/teams/mercedes.svg" alt="Team" />
           <img className="driver-image" src="../../images/drivers/lewis.png" alt="Driver" />
@@ -71,7 +85,7 @@ const TrumpCard = ({player, card}) => {
           </div>
         </div>
         <div className="stats-container" >
-          <div className="stat-wrap" onClick={getExpVal}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={chooseAttExp}/*onClick={flipCard}*/>
             <p className="stat-title">Experience</p>
             <p className="data experience" >{card.experience}</p>
           </div>
