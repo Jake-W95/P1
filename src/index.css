@@ -62,6 +62,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 70px;
+  margin-bottom: var(--spacing);
 }
 
 .logo {
@@ -120,8 +121,8 @@ header {
 }
 
 .item {
-  stroke: white;
-  stroke-width: 8;
+  stroke: var(--black);
+  stroke-width: 10;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
@@ -137,7 +138,6 @@ header {
     width: 0;
     left: 0;
     padding: 0 10px;
-    margin-right: 12px;
   }
 
   .links a {
