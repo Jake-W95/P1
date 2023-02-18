@@ -20,9 +20,9 @@ const Game = () => {
   // const [hands, setHands] = useState([])
   let hand1 = hands[0];
   let hand2 = hands[1]
-hand1.forEach(card => {
-  // console.log(card)
-});
+  hand1.forEach(card => {
+    // console.log(card)
+  });
 
 
 
@@ -41,23 +41,23 @@ hand1.forEach(card => {
 
   // Value Comparison
   let WLD = ''
-  function winCard() { 
+  function winCard() {
     let wonCard = [];
-    wonCard= hand2.splice(j, 1);
+    wonCard = hand2.splice(j, 1);
 
     hand1.splice(hand1.lastIndexOf, 0, wonCard[0])
-    seti(i+=2);
+    seti(i += 2);
     setUserAttVal(undefined);
     setAIAttVal(undefined)
   }
-  function loseCard() { 
+  function loseCard() {
     let lostCard = [];
     lostCard = hand1.splice(i, 1)
     hand2.splice(hand2.lastIndexOf, 0, lostCard[0])
-    setj(j+=2)
+    setj(j += 2)
     setUserAttVal(undefined);
     setAIAttVal(undefined)
-    }
+  }
 
   let [i, seti] = useState(0)
   let [j, setj] = useState(0)
@@ -69,6 +69,7 @@ hand1.forEach(card => {
   }
 
   const nextRound = () => {
+   
     if (userAttVal > AIAttVal) {
       winCard();
       increment()
@@ -82,16 +83,31 @@ hand1.forEach(card => {
 
   // console.log('i' + i, ' j ' + j);
   // console.log('H1 ', hand1.length, hand1[i].name, '     H2', hand2.length, hand2[j].name)
- 
+
 
   // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
   // const [AIFlip, setAIFlip] = useState(false)
   // const flipAICard = () => setAIFlip(true)
-
-
+  if (hand1.length === 20) {
+    return (
+      <div>
+        <h1>
+          YOU WIN
+        </h1>
+      </div>
+    )
+  }
+  if (hand2.length === 20) {
+    return (
+      <div>
+        <h1>YOU LOSE</h1>
+      </div>
+    )
+  }
+else{
   return (
     <section className="game-container">
-   
+
       <div>
         {hand1.map(card => {
           return (
@@ -100,7 +116,7 @@ hand1.forEach(card => {
             </li>
           )
         })}
-        <h3>{userAttVal}</h3>
+        {/* <h3>{userAttVal}</h3> */}
       </div>
       <div className="row">
         <div className="col-12 col-md-6">
@@ -111,7 +127,7 @@ hand1.forEach(card => {
         </div>
       </div>
       <div>
-        <h3>{AIAttVal}</h3>
+        {/* <h3>{AIAttVal}</h3> */}
         {hand2.map(card => {
           return (
             <li key={card.name}>
@@ -122,7 +138,7 @@ hand1.forEach(card => {
       </div>
     </section>
   );
-
+      }
 };
 
 export default Game;
