@@ -49,7 +49,18 @@ const Game = () => {
 
   let [i, seti] = useState(0)
   let [j, setj] = useState(0)
-  const increment = () => {seti(i++); setj(j++); console.log('i' + i,' j ' + j)}
+  const increment = () => {
+    i === hand1.length ? seti(0) : seti(i++); 
+      // i++
+      j === hand2.length ? setj(0) : setj(j++);
+      console.log('i' + i,' j ' + j)
+  }
+    // setj(j++); 
+  // }
+
+                                  // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
+  // const [AIFlip, setAIFlip] = useState(false)
+  // const flipAICard = () => setAIFlip(true)
 
 
   return (
@@ -59,7 +70,7 @@ const Game = () => {
       <h1>{AIAttVal}</h1>
       <div className="row">
         <div className="col-12 col-md-6">
-          <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} increment={increment} />
+          <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} increment={increment}/>
         </div>
         <div className="col-12 col-md-6">
           <TrumpCard player="computer" card={hand2[j]} userAttName={userAttName} getAIAttVal={getAIVal} />
