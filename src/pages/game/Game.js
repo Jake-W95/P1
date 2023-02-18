@@ -21,7 +21,7 @@ const Game = () => {
   const hand1 = hands[0];
   const hand2 = hands[1]
 
-  
+
 
 
   // States Getting User's chosen Att Name and Value
@@ -39,44 +39,48 @@ const Game = () => {
 
   // Value Comparison
   let WLD = ''
-  function winCard () {hand1.splice(i++, 0, hand2.splice(j, 1)); seti(i++)}
-  function loseCard () {hand2.splice(j++, 0, hand1.splice(i, 1))}
-  
+  function winCard() { hand1.splice(i++, 0, hand2.splice(j, 1)); seti(i++) }
+  function loseCard() { hand2.splice(j++, 0, hand1.splice(i, 1)); setj(j++) }
+
   let [i, seti] = useState(0)
   let [j, setj] = useState(0)
-  const increment = () => {
-    if (userAttVal > AIAttVal) {
-      winCard()
-    } else if (userAttVal < AIAttVal) {
-      loseCard()
-    } else if (userAttVal === AIAttVal && userAttName != undefined) {
-      WLD = 'DRAW'
-    }
-      
 
-    i === hand1.length ? seti(0) : seti(i++); 
-      // i++
-      j === hand2.length ? setj(0) : setj(j++);
-      console.log('i' + i,' j ' + j);
-      console.log(hand1.length, hand1[i])
-      console.log(hand2.length, hand2[j])
+  const increment = () => {
+    i === hand1.length ? seti(0) : seti(i++);
+    j === hand2.length ? setj(0) : setj(j++);
+
   }
-    // setj(j++); 
+
+  const nextRound = () => {
+    if (userAttVal > AIAttVal) {
+      winCard();
+      increment()
+    } else if (userAttVal < AIAttVal) {
+      loseCard();
+      increment()
+    } else if (userAttVal === AIAttVal && userAttName != undefined) {
+      increment()
+    }
+  }
+
+  console.log('i' + i, ' j ' + j);
+  console.log('H1 ', hand1.length, hand1[i].name, '     H2', hand2.length, hand2[j].name)
+  // setj(j++); 
   // }
 
-                                  // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
+  // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
   // const [AIFlip, setAIFlip] = useState(false)
   // const flipAICard = () => setAIFlip(true)
 
 
   return (
     <section className="game-container">
-      <h1>{WLD}</h1>
+      {/* <h1>{WLD}</h1>
       <h1>{userAttVal}</h1>
-      <h1>{AIAttVal}</h1>
+      <h1>{AIAttVal}</h1> */}
       <div className="row">
         <div className="col-12 col-md-6">
-          <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} increment={increment}/>
+          <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} />
         </div>
         <div className="col-12 col-md-6">
           <TrumpCard player="computer" card={hand2[j]} userAttName={userAttName} getAIAttVal={getAIVal} />
