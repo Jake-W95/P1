@@ -46,12 +46,17 @@ hand1.forEach(card => {
     wonCard= hand2.splice(j, 1);
 
     hand1.splice(hand1.lastIndexOf, 0, wonCard[0])
-    seti(i+=2)
+    seti(i+=2);
+    setUserAttVal(undefined);
+    setAIAttVal(undefined)
   }
   function loseCard() { 
     let lostCard = [];
     lostCard = hand1.splice(i, 1)
     hand2.splice(hand2.lastIndexOf, 0, lostCard[0])
+    setj(j+=2)
+    setUserAttVal(undefined);
+    setAIAttVal(undefined)
     }
 
   let [i, seti] = useState(0)
