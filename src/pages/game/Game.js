@@ -39,21 +39,27 @@ const Game = () => {
 
   // Value Comparison
   let WLD = ''
-  if (userAttVal > AIAttVal) {
-    WLD = 'YOU WIN'
-  } else if (userAttVal < AIAttVal) {
-    WLD = 'YOU LOSE'
-  } else if (userAttVal === AIAttVal && userAttName != undefined) {
-    WLD = 'DRAW'
-  }
-
+  function winCard () {hand1.splice(i++, 0, hand2.splice(j, 1)); seti(i++)}
+  function loseCard () {hand2.splice(j++, 0, hand1.splice(i, 1))}
+  
   let [i, seti] = useState(0)
   let [j, setj] = useState(0)
   const increment = () => {
+    if (userAttVal > AIAttVal) {
+      winCard()
+    } else if (userAttVal < AIAttVal) {
+      loseCard()
+    } else if (userAttVal === AIAttVal && userAttName != undefined) {
+      WLD = 'DRAW'
+    }
+      
+
     i === hand1.length ? seti(0) : seti(i++); 
       // i++
       j === hand2.length ? setj(0) : setj(j++);
-      console.log('i' + i,' j ' + j)
+      console.log('i' + i,' j ' + j);
+      console.log(hand1.length, hand1[i])
+      console.log(hand2.length, hand2[j])
   }
     // setj(j++); 
   // }
