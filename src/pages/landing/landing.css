@@ -55,6 +55,19 @@
   font-size: 25px;
 }
 
+.f1-car {
+  position: absolute;
+  height: 100px;
+}
+
+.car-one {
+  margin-top: 80px;
+}
+
+.car-two {
+  margin-top: -40px;
+}
+
 /* --- LANDING STYLES--- */
 
 .landing-container {
