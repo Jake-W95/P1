@@ -60,19 +60,30 @@ function Standings() {
     <div>
       <div>
         {showTeamRanking ? (
-          <button onClick={handleDisplayDriverStandings}>
+          <button
+            className="standingsBtn"
+            onClick={handleDisplayDriverStandings}
+          >
             Driver Standings
           </button>
         ) : (
-          <button onClick={handleDisplayTeamRanking}>Team Ranking</button>
+          <button className="standingsBtn" onClick={handleDisplayTeamRanking}>
+            Team Ranking
+          </button>
         )}
 
         {showHeading && (
           <>
             <h1>F1 Driver Standings</h1>
             <div>
-              <label htmlFor="yearSelect">Select year: </label>
-              <select value={selectedYear} onChange={handleSelectYear}>
+              <label className="standingsLbl" htmlFor="yearSelect">
+                Select year:{" "}
+              </label>
+              <select
+                className="standingsDrop"
+                value={selectedYear}
+                onChange={handleSelectYear}
+              >
                 <option value="2023">2023</option>
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>

@@ -35,8 +35,15 @@ function TeamStandings() {
   return (
     <div>
       <h1>F1 Team Standings </h1>
-      <label htmlFor="year">Select year: </label>
-      <select id="year" value={selectedYear} onChange={handleYearChange}>
+      <label className="standingsLbl" htmlFor="year">
+        Select year:{" "}
+      </label>
+      <select
+        className="standingsDrop"
+        id="year"
+        value={selectedYear}
+        onChange={handleYearChange}
+      >
         <option value={new Date().getFullYear()}>
           {new Date().getFullYear()}
         </option>
