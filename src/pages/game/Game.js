@@ -42,12 +42,17 @@ hand1.forEach(card => {
   // Value Comparison
   let WLD = ''
   function winCard() { 
-    let wonCard = hand2.splice(j, 1);
-// console.log(wonCard[0])
+    let wonCard = [];
+    wonCard= hand2.splice(j, 1);
+
     hand1.splice(i, 0, wonCard[0])
-    // hand1.splice(i, 0, hand2.splice(j, 1)); seti(i++)
+    
   }
-  function loseCard() { hand2.splice(j, 0, hand1.splice(i, 1)); setj(j++) }
+  function loseCard() { 
+    let lostCard = [];
+    lostCard = hand1.splice(i, 1)
+    hand2.splice(j, 0, lostCard[0])
+    }
 
   let [i, seti] = useState(0)
   let [j, setj] = useState(0)
