@@ -1,6 +1,5 @@
 import ArticleCard from "./ArticleCard";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 const Articles = () => {
   const noOfArticles = 10;
@@ -47,11 +46,11 @@ const Articles = () => {
     fetchArticles();
   }, []);
   return (
-    <motion.div className="articles-wrap row">
+    <div className="articles-wrap row">
       {articles.map((article, i) => (
         <ArticleCard key={i} article={article} imageUrls={imageUrls[i]} />
       ))}
-    </motion.div>
+    </div>
   );
 };
 

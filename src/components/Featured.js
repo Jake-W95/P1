@@ -1,4 +1,18 @@
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+
 const Featured = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+
+  const variants = {
+    left: { x: "-10vw", opacity: 0 },
+    right: { x: "5vw", opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
   return (
     <>
       <p className="play-featured">FEATURED</p>
@@ -12,7 +26,16 @@ const Featured = () => {
           to choose a stat you think is better than your opponent's card. But be careful – your opponent might have a
           trick up their sleeve! Are you ready to show off your knowledge? Let's find out!
         </p>
-        <img className="landing-image" src="./images/landing-image.jpeg" alt="F1 Heroes" />
+        <motion.img
+          className="landing-image"
+          src="./images/landing-image.jpeg"
+          alt="F1 Heroes"
+          ref={ref}
+          variants={variants}
+          initial="right"
+          animate={inView ? "visible" : "left"}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        />
       </div>
     </>
   );

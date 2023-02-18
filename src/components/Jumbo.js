@@ -7,7 +7,7 @@ const Jumbo = () => {
         <motion.h1
           initial={{ x: "-100vw" }}
           animate={{ x: "0" }}
-          transition={{ type: "spring", duration: 1, ease: "easeInOut" }}
+          transition={{ type: "spring", delay: 0.3, duration: 1, ease: "easeInOut" }}
         >
           P1
         </motion.h1>
@@ -15,7 +15,7 @@ const Jumbo = () => {
         <motion.p
           initial={{ x: "-100vw" }}
           animate={{ x: "0" }}
-          transition={{ type: "spring", bounce: "0.5", duration: 2, ease: [0.17, 0.67, 0.83, 0.67] }}
+          transition={{ type: "spring", bounce: "0.5", delay: 0.5, duration: 2, ease: [0.17, 0.67, 0.83, 0.67] }}
         >
           {" "}
           Fuel your passion
