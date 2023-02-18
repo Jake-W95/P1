@@ -5,7 +5,7 @@ import TeamStandings from "./TeamStandings";
 function Standings() {
   const [standings, setStandings] = useState([]);
   const [driverImageErrors, setDriverImageErrors] = useState([]);
-  const [driverConstructorErrors, setDriverConstructorErrors] = useState([]);
+  const [teamImageErrors, setTeamImageErrors] = useState([]);
   const [showTeamRanking, setShowTeamRanking] = useState(false);
   const [showHeading, setShowHeading] = useState(true);
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
@@ -32,7 +32,7 @@ function Standings() {
   };
 
   const handleTeamImageError = (driver) => {
-    setDriverConstructorErrors((prevState) => [
+    setTeamImageErrors((prevState) => [
       ...prevState,
       driver.Constructors[0].constructorId,
     ]);
@@ -89,7 +89,7 @@ function Standings() {
             selectedYear={selectedYear}
             showTeamRanking={showTeamRanking}
             handleDisplayDriverStandings={handleDisplayDriverStandings}
-            driverConstructorErrors={setDriverConstructorErrors}
+            teamImageErrors={setTeamImageErrors}
           />
         </div>
       )}
@@ -132,7 +132,7 @@ function Standings() {
                           alt={driver.Constructors[0].constructorId}
                           className="team-svg"
                           style={{
-                            display: driverConstructorErrors.includes(
+                            display: teamImageErrors.includes(
                               driver.Constructors[0].constructorId
                             )
                               ? "none"
