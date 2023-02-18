@@ -45,13 +45,13 @@ hand1.forEach(card => {
     let wonCard = [];
     wonCard= hand2.splice(j, 1);
 
-    hand1.splice(i, 0, wonCard[0])
-    
+    hand1.splice(hand1.lastIndexOf, 0, wonCard[0])
+    seti(i+=2)
   }
   function loseCard() { 
     let lostCard = [];
     lostCard = hand1.splice(i, 1)
-    hand2.splice(j, 0, lostCard[0])
+    hand2.splice(hand2.lastIndexOf, 0, lostCard[0])
     }
 
   let [i, seti] = useState(0)
@@ -95,6 +95,7 @@ hand1.forEach(card => {
             </li>
           )
         })}
+        <h3>{userAttVal}</h3>
       </div>
       <div className="row">
         <div className="col-12 col-md-6">
@@ -105,6 +106,7 @@ hand1.forEach(card => {
         </div>
       </div>
       <div>
+        <h3>{AIAttVal}</h3>
         {hand2.map(card => {
           return (
             <li key={card.name}>
