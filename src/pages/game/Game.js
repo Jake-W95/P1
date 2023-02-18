@@ -18,9 +18,11 @@ const Game = () => {
   // useEffect(()=> setHands(shuffleDeal()), [hands])
 
   // const [hands, setHands] = useState([])
-  const hand1 = hands[0];
-  const hand2 = hands[1]
-
+  let hand1 = hands[0];
+  let hand2 = hands[1]
+hand1.forEach(card => {
+  // console.log(card)
+});
 
 
 
@@ -39,8 +41,13 @@ const Game = () => {
 
   // Value Comparison
   let WLD = ''
-  function winCard() { hand1.splice(i++, 0, hand2.splice(j, 1)); seti(i++) }
-  function loseCard() { hand2.splice(j++, 0, hand1.splice(i, 1)); setj(j++) }
+  function winCard() { 
+    let wonCard = hand2.splice(j, 1);
+// console.log(wonCard[0])
+    hand1.splice(i, 0, wonCard[0])
+    // hand1.splice(i, 0, hand2.splice(j, 1)); seti(i++)
+  }
+  function loseCard() { hand2.splice(j, 0, hand1.splice(i, 1)); setj(j++) }
 
   let [i, seti] = useState(0)
   let [j, setj] = useState(0)
@@ -63,10 +70,9 @@ const Game = () => {
     }
   }
 
-  console.log('i' + i, ' j ' + j);
-  console.log('H1 ', hand1.length, hand1[i].name, '     H2', hand2.length, hand2[j].name)
-  // setj(j++); 
-  // }
+  // console.log('i' + i, ' j ' + j);
+  // console.log('H1 ', hand1.length, hand1[i].name, '     H2', hand2.length, hand2[j].name)
+ 
 
   // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
   // const [AIFlip, setAIFlip] = useState(false)
@@ -75,9 +81,16 @@ const Game = () => {
 
   return (
     <section className="game-container">
-      {/* <h1>{WLD}</h1>
-      <h1>{userAttVal}</h1>
-      <h1>{AIAttVal}</h1> */}
+   
+      <div>
+        {hand1.map(card => {
+          return (
+            <li key={card.name}>
+              {card.name}
+            </li>
+          )
+        })}
+      </div>
       <div className="row">
         <div className="col-12 col-md-6">
           <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} />
@@ -85,6 +98,15 @@ const Game = () => {
         <div className="col-12 col-md-6">
           <TrumpCard player="computer" card={hand2[j]} userAttName={userAttName} getAIAttVal={getAIVal} />
         </div>
+      </div>
+      <div>
+        {hand2.map(card => {
+          return (
+            <li key={card.name}>
+              {card.name}
+            </li>
+          )
+        })}
       </div>
     </section>
   );
