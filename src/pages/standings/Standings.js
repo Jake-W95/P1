@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./standings.css";
 import TeamStandings from "./TeamStandings";
 
+// STATE VARIABLES
 function Standings() {
   const [standings, setStandings] = useState([]);
   const [driverImageErrors, setDriverImageErrors] = useState([]);
@@ -14,7 +15,7 @@ function Standings() {
   useEffect(() => {
     const fetchDriverStandings = async () => {
       const response = await fetch(
-        //WAIT FOR THE RESPONSE
+        // WAIT FOR THE RESPONSE
         `https://ergast.com/api/f1/${selectedYear}/driverStandings.json`
       );
       const data = await response.json();
@@ -31,6 +32,7 @@ function Standings() {
     setDriverImageErrors((prevState) => [...prevState, driver.Driver.driverId]);
   };
 
+  //IF NO TEAM IMAGE JUST DISPLAY TEAM NAME
   const handleTeamImageError = (driver) => {
     setTeamImageErrors((prevState) => [
       ...prevState,
@@ -89,7 +91,6 @@ function Standings() {
             selectedYear={selectedYear}
             showTeamRanking={showTeamRanking}
             handleDisplayDriverStandings={handleDisplayDriverStandings}
-            teamImageErrors={setTeamImageErrors}
           />
         </div>
       )}

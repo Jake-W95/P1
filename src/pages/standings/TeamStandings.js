@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import "./standings.css";
 
+// STATE VARIABLES
 function TeamStandings() {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [standings, setStandings] = useState([]);
 
+  // RUN THE FUNCTION TO GET THE CONSTRUCTOR STANDINGS BY YEAR
   useEffect(() => {
     const fetchStandings = async () => {
       const response = await fetch(
@@ -18,15 +20,18 @@ function TeamStandings() {
     fetchStandings();
   }, [selectedYear]);
 
+  // CHANGES THE STANDINGS FROM YEAR SELECT
   const handleYearChange = (event) => {
     setSelectedYear(event.target.value);
   };
 
+  // SHOULD FALLBACK TO COUNTRY FLAG WHEN CONSTRUCTOR IMAGE IS MISSING, JUST DISPLAYS TEAM NAME STILL RESEARCHING
   const handleImageError = (e) => {
     e.target.onerror = null;
     e.target.src = `https://www.countryflags.io/${e.target.alt}/flat/64.svg`;
   };
 
+  // RENDERING DATA TO THE DOM
   return (
     <div>
       <h1>F1 Team Standings </h1>
