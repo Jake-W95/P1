@@ -13,6 +13,8 @@ import shuffleDeal from "../../gameScripts/gameLogic";
 // console.log(hand1)
 
 
+
+
 const hands = shuffleDeal()
 const Game = () => {
   // useEffect(()=> setHands(shuffleDeal()), [hands])
@@ -91,9 +93,8 @@ const Game = () => {
   if (hand1.length === 20) {
     return (
       <div>
-        <h1>
-          YOU WIN
-        </h1>
+        <h1>YOU WIN</h1>
+        <button onClick={() => window.alert('click')}>Play Again?</button>
       </div>
     )
   }
@@ -101,6 +102,7 @@ const Game = () => {
     return (
       <div>
         <h1>YOU LOSE</h1>
+        <button onClick={() => window.alert('click')}>Play Again?</button>
       </div>
     )
   }
@@ -140,5 +142,6 @@ else{
   );
       }
 };
+
 
 export default Game;
