@@ -1,7 +1,7 @@
-/* || FONTS */
+/* --- || FONTS --- */
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
 
-/* || VARIABLES */
+/* --- || VARIABLES --- */
 
 :root {
   --white: #fff;
@@ -11,19 +11,19 @@
   --sm-spacing: 30px;
 }
 
-/* || ANIMATIONS */
-@keyframes slideDown {
+/* --- || ANIMATIONS --- */
+@keyframes slide {
   0% {
-    transform: translateY(-20%);
+    transform: translatex(100%);
     opacity: 0;
   }
   100% {
-    transform: translateY(1%);
+    transform: translatex(0%);
     opacity: 1;
   }
 }
 
-/* --- RESETS --- */
+/* --- || RESETS --- */
 
 * {
   margin: 0;
@@ -43,26 +43,23 @@ body {
   background-color: var(--white);
 }
 
-/* --- GLOBAL STYLES--- */
+/* --- || GLOBAL STYLES --- */
 
-/* || MOBILE STYLES */
+/* || --- MOBILE STYLES --- */
 ::selection {
   background-color: var(--red);
   color: var(--white);
 }
 
-.page-title {
-}
-
 /* --- HEADER ---  */
 header {
   padding: var(--sm-spacing) var(--spacing);
-  background-color: var(--red);
+  background-color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
-  margin-bottom: var(--spacing);
+  height: 80px;
+  z-index: 10;
 }
 
 .logo {
@@ -73,9 +70,9 @@ header {
 .links {
   display: none;
   position: absolute;
-  top: 67px;
+  top: 77px;
   right: 0px;
-  background-color: var(--red);
+  background-color: var(--black);
   width: 100%;
   padding: 10px;
   z-index: 5;
@@ -94,7 +91,7 @@ header {
 
 .links.open {
   display: block;
-  animation: slideDown 0.5s ease-in-out forwards;
+  animation: slide 0.5s ease-in-out forwards;
 }
 
 .dropdown-toggle {
@@ -121,8 +118,8 @@ header {
 }
 
 .item {
-  stroke: var(--black);
-  stroke-width: 10;
+  stroke: var(--red);
+  stroke-width: 3;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
@@ -145,6 +142,7 @@ header {
     margin-left: 3px;
     font-size: 16px;
     white-space: nowrap;
+    color: var(--black);
   }
 
   .links a:not(:last-child) {
@@ -152,16 +150,15 @@ header {
   }
 
   .links a:last-child {
-    background-color: var(--white);
-    color: var(--red);
+    background-color: var(--black);
+    color: var(--white);
     border-radius: 5px;
     padding: 5px 20px;
     transition: all 0.2s ease-in-out;
   }
 
   .links a:last-child:hover {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--red);
   }
 
   .links.open {
@@ -179,7 +176,7 @@ header {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--white);
+    background-color: var(--black);
     transition: width 0.3s ease-in-out;
   }
 
@@ -194,14 +191,13 @@ header {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--white);
+    background-color: var(--black);
     transition: width 0.3s ease-in-out;
     width: 100%;
   }
 
   .links a.active:last-child {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--red);
   }
 
   .open,
