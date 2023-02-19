@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import WinGame from "../../components/WinGame";
+
 import TrumpCard from "../../components/TrumpCard";
 import "./game.css";
 
@@ -71,7 +73,7 @@ const Game = () => {
   }
 
   const nextRound = () => {
-   
+
     if (userAttVal > AIAttVal) {
       winCard();
       increment()
@@ -92,55 +94,55 @@ const Game = () => {
   // const flipAICard = () => setAIFlip(true)
   if (hand1.length === 20) {
     return (
-      <div>
-        <h1>YOU WIN</h1>
-        <button onClick={() => window.alert('click')}>Play Again?</button>
-      </div>
+      // <WinGame />
+      <>
+        <h1>You Won!</h1>
+        <button onClick={() => Game}>Play Again?</button></>
     )
   }
   if (hand2.length === 20) {
     return (
       <div>
         <h1>YOU LOSE</h1>
-        <button onClick={() => window.alert('click')}>Play Again?</button>
+        <button onClick={() => Game}>Play Again?</button>
       </div>
     )
   }
-else{
-  return (
-    <section className="game-container">
+  else {
+    return (
+      <section className="game-container">
 
-      <div>
-        {hand1.map(card => {
-          return (
-            <li key={card.name}>
-              {card.name}
-            </li>
-          )
-        })}
-        {/* <h3>{userAttVal}</h3> */}
-      </div>
-      <div className="row">
-        <div className="col-12 col-md-6">
-          <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} />
+        <div>
+          {hand1.map(card => {
+            return (
+              <li key={card.name}>
+                {card.name}
+              </li>
+            )
+          })}
+          {/* <h3>{userAttVal}</h3> */}
         </div>
-        <div className="col-12 col-md-6">
-          <TrumpCard player="computer" card={hand2[j]} userAttName={userAttName} getAIAttVal={getAIVal} />
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} />
+          </div>
+          <div className="col-12 col-md-6">
+            <TrumpCard player="computer" card={hand2[j]} userAttName={userAttName} getAIAttVal={getAIVal} />
+          </div>
         </div>
-      </div>
-      <div>
-        {/* <h3>{AIAttVal}</h3> */}
-        {hand2.map(card => {
-          return (
-            <li key={card.name}>
-              {card.name}
-            </li>
-          )
-        })}
-      </div>
-    </section>
-  );
-      }
+        <div>
+          {/* <h3>{AIAttVal}</h3> */}
+          {hand2.map(card => {
+            return (
+              <li key={card.name}>
+                {card.name}
+              </li>
+            )
+          })}
+        </div>
+      </section>
+    );
+  }
 };
 
 
