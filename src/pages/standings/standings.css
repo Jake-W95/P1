@@ -1,9 +1,117 @@
-/* --- STANDING STYLES--- */
 
 /* || FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
 
 /* || VARIABLES */
 
-/* || MOBILE STYLES */
+:root {
+  --white: #fff;
+  --red: #e23d31;
+  --black: #15151e;
+  --spacing: 50px;
+  --sm-spacing: 30px;
+}
 
-/* || MEDIA QUERIES FOR LARGER SCREENS */
+/* --- STANDING STYLES--- */
+h1 {
+    text-align: center;
+}
+.standingsBtn {
+  background-color: var(--red);
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+  font-size: 15px;
+  margin: 0px 22px;
+  margin-top: 10px;
+  cursor: pointer;
+
+}
+.standingsDrop {
+  background-color: var(--red);
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+  font-size: 12px;
+  cursor: pointer;
+
+}
+.standingsLbl {
+  margin-left: 22px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 0.5em;
+    padding-left: 3%;
+    color:#484848;
+  }
+  
+  th {
+    background-color: #333;
+    color: #fff;
+  }
+
+  tr {
+    background-color: rgb(187, 187, 187);
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  .driver-svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+ 
+  .team-svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  /* || MEDIA QUERIES */
+  @media only screen and (max-width: 600px) {
+    table, tbody, thead, th, td, tr {
+      display: block;
+    }
+    thead {
+        display: none;
+    }
+
+    td {
+      position: relative;
+      padding-left: 50%;
+    }
+    td:before {
+      position: absolute;
+      top: 0;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+    .driver-img {
+      width: 40px;
+      height: 40px;
+    }
+    .team-img {
+      width: 40px;
+      height: 40px;
+    }
+  }
