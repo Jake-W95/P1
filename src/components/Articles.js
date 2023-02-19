@@ -3,23 +3,22 @@ import { useState, useEffect } from "react";
 
 const Articles = () => {
   const noOfArticles = 10;
-
   const [articles, setArticles] = useState([]);
   const [imageUrls, setImageUrls] = useState([]);
 
-  const fetchArticleImages = async () => {
-    const apiKey = "33706006-243142fe91766cde3e9accfb9";
-    const query = "F1";
+  const fetchArticleImages = async (title) => {
+    const apiKey = "AIzaSyAcRQsjzoclNmv139eAucaisRDE7ZYIpzk";
+    const cx = "e7fad3bd57ceb4683";
 
-    const url = `https://pixabay.com/api/?key=${apiKey}&q=${query}&category=sports&order=latest&image_type=photo&per_page=${noOfArticles}`;
+    const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${title}&searchType=image`;
 
     try {
       const response = await fetch(url);
       const data = await response.json();
-      return data.hits.map((hit) => hit.webformatURL);
+      console.log(data);
+      return data.items.map((item) => item.link).slice(0, 1);
     } catch (err) {
       console.error(err);
-      return [];
     }
   };
 
@@ -27,7 +26,6 @@ const Articles = () => {
     const fetchArticles = () => {
       // const NEWS_API_KEY = "dbc459935f4a4396ac5ec8a225ea0504";
       const NEWS_API_KEY2 = "35b375c55dc24b02b8cfb82232e933d9";
-
       fetch(`https://newsapi.org/v2/everything?q=f1&sortBy=relevance&language=en&sources=bbc-news`, {
         headers: {
           "x-api-key": NEWS_API_KEY2,
@@ -37,14 +35,15 @@ const Articles = () => {
         .then((data) => {
           const articleData = data.articles.slice(0, noOfArticles);
           setArticles(articleData);
-          return fetchArticleImages(articleData);
+          return Promise.all(articleData.map((article) => fetchArticleImages(article.title)));
         })
         .then((imageUrlsData) => setImageUrls(imageUrlsData))
-        .catch((err) => console.log(err));
+        .catch((err) => console.error(err));
     };
 
     fetchArticles();
   }, []);
+
   return (
     <div className="articles-wrap row">
       {articles.map((article, i) => (

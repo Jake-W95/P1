@@ -9,9 +9,9 @@ const Header = () => {
     },
     visible: {
       pathLength: 1,
-      fill: "rgba(255, 255, 255, 1)",
+      fill: "rgba(226, 61, 49, 1)",
       transition: {
-        default: { duration: 5, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" },
+        default: { duration: 5, ease: "easeInOut" },
         fill: { duration: 5, ease: [1, 0, 0.8, 1] },
       },
     },

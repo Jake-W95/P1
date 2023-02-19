@@ -26,16 +26,6 @@
   );
 }
 
-/* .dashed-line::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 9px;
-  width: 20px;
-  border-top: 2px dashed white;
-  margin-right: 10px;
-} */
-
 .jumbo-text {
   color: var(--white);
   text-align: center;
@@ -61,11 +51,11 @@
 }
 
 .car-one {
-  margin-top: 80px;
+  margin-top: 130px;
 }
 
 .car-two {
-  margin-top: -40px;
+  margin-top: -80px;
 }
 
 /* --- LANDING STYLES--- */
@@ -131,8 +121,6 @@ a {
 .article-title {
   color: var(--black);
   border-bottom: 2px solid rgb(194, 194, 194);
-  /* border-right: 2px solid rgb(194, 194, 194); */
-
   padding: 10px;
   border-radius: 0px 0px 50px 0px;
   transition: all 0.2s ease-in-out;
@@ -157,10 +145,34 @@ a {
 
 .article-card:hover .article-title {
   border-bottom: 2px solid var(--red);
-  /* border-right: 2px solid var(--red); */
 }
 
 /* --- MAILING LIST --- */
+
+/* --- SCHEDULE --- */
+.schedule {
+  padding: var(--sm-spacing) 0;
+}
+
+.race-card {
+  border-top: 3px solid var(--red);
+  border-left: 3px solid var(--red);
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  padding: var(--sm-spacing);
+  margin: 10px;
+  white-space: nowrap;
+}
+
+.flag-title-wrap {
+  display: flex;
+  justify-content: left;
+}
+
+.race-title {
+  padding-left: 10px;
+}
 
 /* --- FOOTER --- */
 footer {
@@ -171,11 +183,15 @@ footer {
   font-size: 20px;
 }
 
+/* --- || MEDIA QUERIES FOR LARER SCREENS --- */
+
 @media (min-width: 992px) {
   .play-wrap {
     border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
     border-right: var(--red) 10px solid;
-    border-bottom: none;
+    /* border-bottom: none; */
     padding-right: var(--sm-spacing);
   }
 

@@ -4,6 +4,7 @@
 import Jumbo from "../../components/Jumbo";
 import Featured from "../../components/Featured";
 import Articles from "../../components/Articles";
+import Schedule from "../../components/Schedule";
 
 import Footer from "../../components/Footer";
 import "./landing.css";
@@ -31,6 +32,11 @@ const Landing = () => {
           </div>
           <div className="col-12 col-lg-6">
             <Articles />
+          </div>
+        </div>
+        <div className="">
+          <div className="">
+            <Schedule />
           </div>
         </div>
       </main>
