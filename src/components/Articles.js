@@ -7,8 +7,8 @@ const Articles = () => {
   const [imageUrls, setImageUrls] = useState([]);
 
   const fetchArticleImages = async (title) => {
-    const apiKey = "AIzaSyAcRQsjzoclNmv139eAucaisRDE7ZYIpzk";
-    const cx = "e7fad3bd57ceb4683";
+    const apiKey = process.env.REACT_APP_IMG_API_KEY;
+    const cx = process.env.REACT_APP_CX_API_KEY;
 
     const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${title}&searchType=image`;
 
@@ -24,8 +24,8 @@ const Articles = () => {
 
   useEffect(() => {
     const fetchArticles = () => {
-      // const NEWS_API_KEY = "dbc459935f4a4396ac5ec8a225ea0504";
-      const NEWS_API_KEY2 = "35b375c55dc24b02b8cfb82232e933d9";
+      // const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
+      const NEWS_API_KEY2 = process.env.REACT_APP_NEWS_API_KEY2;
       fetch(`https://newsapi.org/v2/everything?q=f1&sortBy=relevance&language=en&sources=bbc-news`, {
         headers: {
           "x-api-key": NEWS_API_KEY2,

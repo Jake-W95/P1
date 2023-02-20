@@ -1,6 +1,3 @@
-// import { useInView } from "react-intersection-observer";
-// import { motion } from "framer-motion";
-
 import Jumbo from "../../components/Jumbo";
 import Featured from "../../components/Featured";
 import Articles from "../../components/Articles";
@@ -10,16 +7,6 @@ import Footer from "../../components/Footer";
 import "./landing.css";
 
 const Landing = () => {
-  // const [ref, inView] = useInView({
-  //   threshold: 0.1,
-  //   triggerOnce: true,
-  // });
-
-  // const variants = {
-  //   right: { x: "10vw", opacity: 0 },
-  //   visible: { x: 0, opacity: 1 },
-  // };
-
   return (
     <>
       <section className="jumbo-container row">
