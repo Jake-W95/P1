@@ -34,7 +34,7 @@ function TeamStandings() {
   // RENDERING DATA TO THE DOM
   return (
     <div>
-      <h1>F1 Team Standings </h1>
+      {/* <h1>F1 Team Standings </h1> */}
       <label className="standingsLbl" htmlFor="year">
         Select year:{" "}
       </label>

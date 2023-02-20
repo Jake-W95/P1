@@ -57,51 +57,62 @@ function Standings() {
 
   // RENDERING DATA TO THE DOM
   return (
-    <div>
+    <section>
       <div>
-        {showTeamRanking ? (
+        <h1>{showHeading ? "Driver Standings" : "Team Standings"}</h1>
+      </div>
+      <div className="btn-wrap">
+        <div className="btn-wrap-standings">
           <button
+            id="test"
             className="standingsBtn"
-            onClick={handleDisplayDriverStandings}
+            onClick={
+              showTeamRanking
+                ? handleDisplayDriverStandings
+                : handleDisplayTeamRanking
+            }
           >
-            Driver Standings
+            {showTeamRanking ? "Driver Standings" : "Team Ranking"}
           </button>
-        ) : (
-          <button className="standingsBtn" onClick={handleDisplayTeamRanking}>
-            Team Ranking
-          </button>
-        )}
+        </div>
 
         {showHeading && (
-          <>
-            <h1>F1 Driver Standings</h1>
-            <div>
-              <label className="standingsLbl" htmlFor="yearSelect">
-                Select year:{" "}
-              </label>
-              <select
-                className="standingsDrop"
-                value={selectedYear}
-                onChange={handleSelectYear}
-              >
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-                <option value="2019">2019</option>
-                <option value="2018">2018</option>
-                <option value="2017">2017</option>
-              </select>
-            </div>
-          </>
+          <div className="dropdown">
+            <label className="standingsLbl" htmlFor="yearSelect">
+              Select year:{" "}
+            </label>
+            <select
+              className="standingsDrop"
+              value={selectedYear}
+              onChange={handleSelectYear}
+            >
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+            </select>
+          </div>
         )}
       </div>
+
+      {/* {showTeamRanking ? (
+        <button className="standingsBtn" onClick={handleDisplayDriverStandings}>
+          Driver Standings
+        </button>
+      ) : (
+        <button className="standingsBtn" onClick={handleDisplayTeamRanking}>
+          Team Ranking
+        </button>
+      )} */}
       {showTeamRanking && (
         <div>
           <TeamStandings
             selectedYear={selectedYear}
             showTeamRanking={showTeamRanking}
-            handleDisplayDriverStandings={handleDisplayDriverStandings}
+            //handleDisplayDriverStandings={handleDisplayDriverStandings}
           />
         </div>
       )}
@@ -163,7 +174,7 @@ function Standings() {
           </table>
         </div>
       )}
-    </div>
+    </section>
   );
 }
 
