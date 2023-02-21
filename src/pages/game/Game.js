@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import TrumpCard from "../../components/TrumpCard";
 import "./game.css";
+import GameInstructions from "../../components/GameInstructions";
 
 // GAME LOGIC 
 import shuffleDeal from "../../gameScripts/gameLogic";
@@ -85,10 +86,14 @@ const Game = () => {
   // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
   const [AIFlip, setAIFlip] = useState(false)
   const flipAICard = () => setAIFlip(true)
+
+  const [showInstructions, setShowInstructions] = useState(true)
+  const toggleInstructions = () => setShowInstructions(!showInstructions)
+  console.log(showInstructions)
   //  Win State
   if (hand1.length === 20) {
     return (
-      // <WinGame />
+      
       <>
         <h1>You Won!</h1>
         <button onClick={() => Game}>Play Again?</button></>
@@ -106,6 +111,9 @@ const Game = () => {
   //  Game State
   else {
     return (
+      <>
+   <GameInstructions toggleInstructions={toggleInstructions} showInstructions={showInstructions}/>
+   
       <section className="game-container">
 
         {/* <div>
@@ -141,6 +149,7 @@ const Game = () => {
           })}
         </div> */}
       </section>
+      </>
     );
   }
 };
