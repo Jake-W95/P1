@@ -1,70 +1,223 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <!-- PROJECT SHIELDS -->
 
-## Available Scripts
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-In the project directory, you can run:
+  <!-- PROJECT LOGO -->
 
-### `npm start`
+  <br />
+  <div align="center">
+    <a href="https://github.com/Jake-W95/P1">
+      <img src="./public/images/logo.svg" alt="Logo" width="200" height="200">
+    </a>
+    <h3 align="center">P1</h3>
+    <p align="center">
+    <br/>
+Welcome to P1, your virtual pit stop for the latest updates and standings in the world of Formula 1. But that's not all—we've also got the ultimate card game where driver knowledge is the key to victory. Join us and become a true F1 expert!   <br/>
+      <br/>
+      P1 is proudly built by: Jake Wallace, Hal Waithe and Michael Yeates
+      <br/>
+      <br/>
+      <a href="https://github.com/Jake-W95/P1"><strong>Explore the docs »</strong></a>
+      <br/>
+      <br/>
+      <a href="https://Jake-W95.github.io/P1/">View Live Website</a>
+      ·
+      <a href="https://github.com/Jake-W95/P1/issues">Report Bug</a>
+      ·
+      <a href="https://github.com/Jake-W95/P1/issues">Request Feature</a>
+    </p>
+  </div>
+  
+  <!-- TABLE OF CONTENTS -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <details>
+    <summary>Table of Contents</summary>
+    <ol>
+      <li>
+        <a href="#about-the-project">About The Project</a>
+        <ul>
+          <li><a href="#screenshot">Screenshot</a></li>
+          <li><a href="#built-with">Built With</a></li>
+          <li><a href="#description">Description</a></li>
+        </ul>
+      </li>
+      <li>
+          <a href="#getting-started">Getting Started</a>
+        <ul>
+          <li><a href="#prerequisites">Prerequisites</a></li>
+          <li><a href="#installation">Installation</a></li>
+        </ul>
+      </li>
+      <li>
+          <a href="#usage">Usage</a>
+        <ul>
+          <li><a href="#functionality">Functionality</a></li>
+          <li><a href="#mobile-responsive">Mobile Responsive</a></li>
+        </ul>
+      </li>
+      <li><a href="#license">License</a></li>
+      <li><a href="#contributing">Contributing</a></li>
+      <li><a href="#tests">Tests</a></li>
+      <li><a href="#questions">Questions</a></li>
+      <li><a href="#acknowledgments">Acknowledgments</a></li>
+    </ol>
+  </details>
+  
+  <!-- ABOUT THE PROJECT -->
+  
+  ## About The Project
+  
+  ### Screenshot
+  
+  [![P1 Screen Shot][product-screenshot]](https://Jake-W95.github.io/P1/)
+  
+  <p align="right"><a href="#readme-top">back to top</a></p>
+  
+  ### Built With
+  
+- ![JavaScript](https://img.shields.io/badge/JavaScript-20232A?style=for-the-badge&logo=JavaScript&logoColor=FCDD32)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ![Node.js](https://img.shields.io/badge/Node.js-376e05?style=for-the-badge&logo=Node.js&logoColor=white)
 
-### `npm test`
+- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=React&logoColor=61DAFB)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=Bootstrap&logoColor=white)
 
-### `npm run build`
+- ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=Netlify&logoColor=white)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  <p align="right"><a href="#readme-top">back to top</a></p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ### Description
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+P1 is the ultimate destination for F1 fans! Our website offers the latest news articles, up-to-date standings, and a race schedule, keeping you informed on everything F1. But that's not all - we also offer an exciting card game that puts your driver knowledge to the test! In P1 Heroes, you'll be dealt a card with a driver on it, along with several stats such as experience, wins, podiums, and more. Your goal is to choose a stat you think is better than your opponent's card. But be careful - your opponent might have a trick up their sleeve!
 
-### `npm run eject`
+  <p align="right"><a href="#readme-top">back to top</a></p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- GETTING STARTED -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To get a local copy up and running follow these simple example steps.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Jake-W95/P1.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
 
-### Code Splitting
+  <p align="right"><a href="#readme-top">back to top</a></p>
+  
+  <!-- USAGE EXAMPLES -->
+  
+  ## Usage
+  
+  ### Functionality
+  
+  - The following animation demonstrates the applications functionality
+  
+    [![Functionality Gif][functionality-gif]](https://Jake-W95.github.io/P1/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  <p align="right"><a href="#readme-top">back to top</a></p>
+  
+  ### Mobile Responsive
+  
+  - As demonstrated in the screenshot below, this application is designed to be responsive and adjust seamlessly to fit various screen sizes
+  
+    [![Responsiveness Screenshot][responsive-screenshot]](https://Jake-W95.github.io/P1/)
+  
+  <p align="right"><a href="#readme-top">back to top</a></p>
 
-### Analyzing the Bundle Size
+  <!-- LICENSE -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+Distributed under the MIT License. See `LICENSE.md` for more information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  <p align="right"><a href="#readme-top">back to top</a></p>
+  
+  <!-- CONTRIBUTING -->
+  
+  ## Contributing
+  
+  Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+  
+  If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+  Don't forget to give the project a star! Thanks again!
+  
+  1. Fork the Project
+  2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+  3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+  4. Push to the Branch (`git push origin feature/AmazingFeature`)
+  5. Open a Pull Request
+  
+  <p align="right"><a href="#readme-top">back to top</a></p>
 
-### Advanced Configuration
+  <!-- TESTS -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Tests
 
-### Deployment
+N/A
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  <p align="right"><a href="#readme-top">back to top</a></p>
+  
+  <!-- QUESTIONS -->
+  
+  ## Questions
 
-### `npm run build` fails to minify
+If you have any inquiries, don't hesitate to reach out to one of us.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Jake Wallace: <a href="https://www.linkedin.com/in/jw-fed/">LinkedIn</a> | <a href="https://github.com/Jake-W95/">GitHub</a>
+
+Hal Waithe: <a href="https://github.com/norrinRadd8/">GitHub</a>
+
+Michael Yeates: <a href="https://www.linkedin.com/in/mdyeates/">LinkedIn</a> | <a href="https://github.com/mdyeates/">GitHub</a>
+
+  <p align="right"><a href="#readme-top">back to top</a></p>
+  
+  <!-- ACKNOWLEDGMENTS -->
+  
+  ## Acknowledgments
+
+- [https://example.com](https://example.com)
+
+  <p align="right"><a href="#readme-top">back to top</a></p>
+
+  <!-- MARKDOWN LINKS & IMAGES -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/Jake-W95/P1.svg?style=for-the-badge
+[contributors-url]: https://github.com/Jake-W95/P1/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Jake-W95/P1.svg?style=for-the-badge
+[forks-url]: https://github.com/Jake-W95/P1/network/members
+[stars-shield]: https://img.shields.io/github/stars/Jake-W95/P1.svg?style=for-the-badge
+[stars-url]: https://github.com/Jake-W95/P1/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Jake-W95/P1.svg?style=for-the-badge
+[issues-url]: https://github.com/Jake-W95/P1/issues
+[license-shield]: https://img.shields.io/github/license/Jake-W95/P1.svg?style=for-the-badge
+[license-url]: https://github.com/Jake-W95/P1/blob/main/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/mdyeates
+
+  <!-- UPDATE PLACEHOLDER IMAGES HERE -->
+
+[product-screenshot]: https://placehold.co/600x400?text=Placeholder
+[functionality-gif]: https://placehold.co/600x400?text=Placeholder
+[responsive-screenshot]: https://placehold.co/600x400?text=Placeholder
