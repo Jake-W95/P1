@@ -9,13 +9,9 @@ function TeamStandings() {
   // RUN THE FUNCTION TO GET THE CONSTRUCTOR STANDINGS BY YEAR
   useEffect(() => {
     const fetchStandings = async () => {
-      const response = await fetch(
-        `https://ergast.com/api/f1/${selectedYear}/constructorStandings.json`
-      );
+      const response = await fetch(`https://ergast.com/api/f1/${selectedYear}/constructorStandings.json`);
       const data = await response.json();
-      setStandings(
-        data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings
-      );
+      setStandings(data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
     };
     fetchStandings();
   }, [selectedYear]);
@@ -34,37 +30,15 @@ function TeamStandings() {
   // RENDERING DATA TO THE DOM
   return (
     <div>
-      {/* <h1>F1 Team Standings </h1> */}
-      <label className="standingsLbl" htmlFor="year">
-        Select year:{" "}
-      </label>
-      <select
-        className="standingsDrop"
-        id="year"
-        value={selectedYear}
-        onChange={handleYearChange}
-      >
-        <option value={new Date().getFullYear()}>
-          {new Date().getFullYear()}
-        </option>
-        <option value={new Date().getFullYear() - 1}>
-          {new Date().getFullYear() - 1}
-        </option>
-        <option value={new Date().getFullYear() - 2}>
-          {new Date().getFullYear() - 2}
-        </option>
-        <option value={new Date().getFullYear() - 3}>
-          {new Date().getFullYear() - 3}
-        </option>
-        <option value={new Date().getFullYear() - 4}>
-          {new Date().getFullYear() - 4}
-        </option>
-        <option value={new Date().getFullYear() - 5}>
-          {new Date().getFullYear() - 5}
-        </option>
-        <option value={new Date().getFullYear() - 6}>
-          {new Date().getFullYear() - 6}
-        </option>
+      <label className="standingsLbl" htmlFor="year"></label>
+      <select className="standingsDrop" id="year" value={selectedYear} onChange={handleYearChange}>
+        <option value={new Date().getFullYear()}>{new Date().getFullYear()}</option>
+        <option value={new Date().getFullYear() - 1}>{new Date().getFullYear() - 1}</option>
+        <option value={new Date().getFullYear() - 2}>{new Date().getFullYear() - 2}</option>
+        <option value={new Date().getFullYear() - 3}>{new Date().getFullYear() - 3}</option>
+        <option value={new Date().getFullYear() - 4}>{new Date().getFullYear() - 4}</option>
+        <option value={new Date().getFullYear() - 5}>{new Date().getFullYear() - 5}</option>
+        <option value={new Date().getFullYear() - 6}>{new Date().getFullYear() - 6}</option>
       </select>
       <table>
         <thead>

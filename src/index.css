@@ -45,6 +45,14 @@ body {
 
 /* --- || GLOBAL STYLES --- */
 
+.page-title {
+  font-size: 38px;
+  border-bottom: 2px solid red;
+  padding: 20px;
+  color: var(--white);
+  font-style: italic;
+}
+
 /* || --- MOBILE STYLES --- */
 ::selection {
   background-color: var(--red);
@@ -70,7 +78,7 @@ header {
 .links {
   display: none;
   position: absolute;
-  top: 77px;
+  top: 80px;
   right: 0px;
   background-color: var(--black);
   width: 100%;
@@ -150,15 +158,17 @@ header {
   }
 
   .links a:last-child {
-    background-color: var(--black);
-    color: var(--white);
-    border-radius: 5px;
+    background-color: var(--white);
+    border: 2px solid var(--red);
+    color: var(--red);
+    border-radius: 20px;
     padding: 5px 20px;
     transition: all 0.2s ease-in-out;
   }
 
   .links a:last-child:hover {
     background-color: var(--red);
+    color: var(--white);
   }
 
   .links.open {
@@ -198,6 +208,7 @@ header {
 
   .links a.active:last-child {
     background-color: var(--red);
+    color: var(--white);
   }
 
   .open,

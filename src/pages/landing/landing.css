@@ -155,8 +155,7 @@ a {
 }
 
 .race-card {
-  border-top: 3px solid var(--red);
-  border-left: 3px solid var(--red);
+  border-left: 5px solid var(--red);
   background-color: var(--black);
   color: var(--white);
   border-radius: 10px;
