@@ -60,17 +60,12 @@
 
 /* --- LANDING STYLES--- */
 
-.landing-container {
-  padding: var(--spacing);
-}
-
 /* --- PLAY SECTION --- */
 
 .play-wrap {
-  border-top: var(--red) 10px solid;
-  border-bottom: var(--red) 10px solid;
-  /* padding: 0; */
+  border-bottom: var(--red) 8px solid;
   margin-bottom: var(--sm-spacing);
+  margin-top: var(--sm-spacing);
 }
 
 .play-featured {
@@ -147,11 +142,26 @@ a {
   border-bottom: 2px solid var(--red);
 }
 
-/* --- MAILING LIST --- */
-
 /* --- SCHEDULE --- */
 .schedule {
   padding: var(--sm-spacing) 0;
+  border-top: 8px var(--red) solid;
+}
+
+.schedule-title,
+.schedule-countdown {
+  text-align: center;
+}
+
+.schedule-countdown {
+  margin-bottom: var(--sm-spacing);
+  color: var(--red);
+}
+
+.schedule-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .race-card {
@@ -184,19 +194,32 @@ footer {
 
 /* --- || MEDIA QUERIES FOR LARER SCREENS --- */
 
+@media (min-width: 750px) {
+  .landing-container {
+    padding: var(--spacing);
+  }
+
+  .play-wrap {
+    margin-top: 0;
+  }
+}
+
 @media (min-width: 992px) {
   .play-wrap {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
+    border-right: 8px var(--red) solid;
+    border-top: 8px var(--red) solid;
 
-    border-right: var(--red) 10px solid;
-    /* border-bottom: none; */
     padding-right: var(--sm-spacing);
   }
-
   .articles-wrap {
     overflow-y: scroll;
     height: 97vh;
     padding-left: 15px;
+  }
+
+  .schedule {
+    border: none;
   }
 }

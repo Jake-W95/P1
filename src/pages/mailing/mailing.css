@@ -8,6 +8,16 @@
   background-color: var(--black);
 }
 
+.contact-text {
+  margin-top: var(--sm-spacing);
+  margin-bottom: var(--sm-spacing);
+  color: #c7c7c7;
+}
+
+.contact h3 {
+  text-align: center;
+}
+
 .contact .page-title {
   color: var(--white);
   margin-bottom: var(--sm-spacing);
@@ -19,11 +29,6 @@
 }
 
 form {
-  margin-bottom: var(--sm-spacing);
-}
-
-.contact-text {
-  color: #c7c7c7;
   margin-bottom: var(--sm-spacing);
 }
 
@@ -76,6 +81,35 @@ textarea {
   margin-top: 10px;
 }
 
+.form-submit:hover,
+.form-clear:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
 .contact-img {
+  object-fit: cover;
   width: 100%;
+  height: 100%;
+  filter: brightness(85%) contrast(120%) saturate(120%) sepia(15%);
+}
+
+@media (min-width: 768px) {
+  .form-group {
+    padding: 0 5px;
+  }
+}
+
+@media (min-width: 992px) {
+  .contact-wrap {
+    margin-top: var(--sm-spacing);
+  }
+
+  .contact-image-wrap {
+    padding-right: 15px;
+  }
+
+  .contact-form-wrap {
+    padding-left: 15px;
+  }
 }

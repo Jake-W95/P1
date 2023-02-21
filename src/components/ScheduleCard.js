@@ -30,12 +30,12 @@ const ScheduleCard = ({ race }) => {
       variants={variants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
+      transition={{ duration: 0.4, ease: "easeInOut", type: "spring", stiffness: 260, damping: 20 }}
     >
       <div className="flag-title-wrap">
         <span>{countryCode && <FlagIcon code={countryCode} />}</span>
         <h3 className="race-title">
-          Round: {race.round} - {race.raceName}
+          R{race.round} - {race.raceName}
         </h3>
       </div>
 

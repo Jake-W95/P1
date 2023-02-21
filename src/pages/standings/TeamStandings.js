@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import "./standings.css";
 
 // STATE VARIABLES
@@ -40,7 +41,7 @@ function TeamStandings() {
         <option value={new Date().getFullYear() - 5}>{new Date().getFullYear() - 5}</option>
         <option value={new Date().getFullYear() - 6}>{new Date().getFullYear() - 6}</option>
       </select>
-      <table>
+      <motion.table initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
         <thead>
           <tr>
             <th>Position</th>
@@ -65,7 +66,7 @@ function TeamStandings() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </motion.table>
     </div>
   );
 }

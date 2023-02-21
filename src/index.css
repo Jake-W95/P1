@@ -47,7 +47,7 @@ body {
 
 .page-title {
   font-size: 38px;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid var(--red);
   padding: 20px;
   color: var(--white);
   font-style: italic;
@@ -182,11 +182,11 @@ header {
   .links a:not(:last-child):before {
     content: "";
     position: absolute;
-    bottom: 0px;
+    bottom: 3px;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--black);
+    background-color: var(--red);
     transition: width 0.3s ease-in-out;
   }
 
@@ -197,11 +197,11 @@ header {
   .links a.active:not(:last-child):before {
     content: "";
     position: absolute;
-    bottom: 0px;
+    bottom: 3px;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--black);
+    background-color: var(--red);
     transition: width 0.3s ease-in-out;
     width: 100%;
   }

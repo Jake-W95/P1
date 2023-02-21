@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const Form = () => {
   const [name, setName] = useState("");
@@ -9,11 +7,6 @@ const Form = () => {
   const [subject, setSubject] = useState("");
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
 
   // ALL FIELDS NEED TO BE FILLED
   const handleSubmit = (e) => {
@@ -60,15 +53,7 @@ const Form = () => {
     setSuccess(false);
   };
   return (
-    <motion.form
-      action=""
-      ref={ref}
-      className="mailing-form"
-      initial={{ x: "-10vw", opacity: 0 }}
-      animate={inView ? { x: 0, opacity: 1 } : { x: "-10vw", opacity: 0 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-      onSubmit={handleSubmit}
-    >
+    <form className="mailing-form" onSubmit={handleSubmit}>
       <div className="col-12 col-md-6 form-group" style={{ display: "inline-block" }}>
         <input
           type="text"
@@ -126,7 +111,7 @@ const Form = () => {
           Clear
         </button>
       </div>
-    </motion.form>
+    </form>
   );
 };
 

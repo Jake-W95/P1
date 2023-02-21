@@ -5,10 +5,7 @@ const NavLinks = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-      <button
-        className="dropdown-toggle"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
+      <button className="dropdown-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         {isMenuOpen ? (
           <img className="close-menu" src="./images/close.svg" alt="Close" />
         ) : (
@@ -23,7 +20,7 @@ const NavLinks = () => {
           Standings
         </NavLink>
         <NavLink to="/mailing" onClick={() => setIsMenuOpen(false)}>
-          BoxBoxBox
+          Contact Us
         </NavLink>
         <NavLink to="/game" onClick={() => setIsMenuOpen(false)}>
           Play Now

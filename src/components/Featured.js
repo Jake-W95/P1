@@ -32,9 +32,9 @@ const Featured = () => {
           alt="F1 Heroes"
           ref={ref}
           variants={variants}
-          initial="right"
+          initial="left"
           animate={inView ? "visible" : "left"}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          transition={{ duration: 0.4, ease: "easeInOut", type: "spring", stiffness: 260, damping: 20 }}
         />
       </div>
     </>

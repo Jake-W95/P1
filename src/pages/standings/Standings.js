@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import "./standings.css";
+import { motion } from "framer-motion";
+
 import TeamStandings from "./TeamStandings";
+import "./standings.css";
 
 // STATE VARIABLES
 function Standings() {
@@ -89,7 +91,7 @@ function Standings() {
       )}
       {!showTeamRanking && (
         <div>
-          <table>
+          <motion.table initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
             <thead>
               <tr>
                 <th>Position</th>
@@ -133,7 +135,7 @@ function Standings() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </motion.table>
         </div>
       )}
     </section>
