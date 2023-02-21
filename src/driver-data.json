@@ -10,7 +10,7 @@
     "podiums": 191,
     "wins": 103,
     "points": 4405.5,
-    "driver_image": "image/drivers/hamilton.svg" 
+    "driver_image": "/images/drivers/hamilton.svg" 
   },
   {
     "name": "George Russell",
@@ -23,7 +23,7 @@
     "podiums": 9,
     "wins": 1,
     "points": 294,
-    "driver_image": "image/drivers/russell.svg" 
+    "driver_image": "/images/drivers/russell.svg" 
   },
   {
     "name": "Charles Leclerc",
@@ -36,7 +36,7 @@
     "podiums": 24,
     "wins": 5,
     "points": 868,
-    "driver_image": "image/drivers/leclerc.svg"
+    "driver_image": "/images/drivers/leclerc.svg"
   },
   {
     "name": "Carlos Sainz Jr",
@@ -50,7 +50,7 @@
     "podiums": 15,
     "wins": 1,
     "points": 782.5,
-    "driver_image": "image/drivers/sainz.svg"
+    "driver_image": "/images/drivers/sainz.svg"
   },    
   {
     "name": "Max Verstappen",
@@ -63,7 +63,7 @@
     "podiums": 77,
     "wins": 35,
     "points": 2011.5,
-    "driver_image": "image/drivers/max_verstappen.svg"
+    "driver_image": "/images/drivers/max_verstappen.svg"
   },
   {
     "name": "Sergio Perez",
@@ -76,7 +76,7 @@
     "podiums": 26,
     "wins": 4,
     "points": 1201,
-    "driver_image": "image/drivers/perez.svg"
+    "driver_image": "/images/drivers/perez.svg"
   },     
   {
     "name": "Esteban Ocon",
@@ -89,7 +89,7 @@
     "podiums": 2,
     "wins": 1,
     "points": 364,
-    "driver_image": "image/drivers/ocon.svg"
+    "driver_image": "/images/drivers/ocon.svg"
 
   },
   {
@@ -103,7 +103,7 @@
     "podiums": 3,
     "wins": 1,
     "points": 332,
-    "driver_image": "image/drivers/gasly.svg"
+    "driver_image": "/images/drivers/gasly.svg"
   },            
   {
     "name": "Oscar Piastri",
@@ -116,7 +116,7 @@
     "podiums": 0,
     "wins": 0,
     "points": 0,
-    "driver_image": "image/drivers/piastri.svg"
+    "driver_image": "/images/drivers/piastri.svg"
   },
   {
     "name": "Lando Norris",
@@ -129,7 +129,7 @@
     "podiums": 6,
     "wins": 0,
     "points": 428,
-    "driver_image": "image/drivers/norris.svg"
+    "driver_image": "/images/drivers/norris.svg"
   },          
   {
     "name": "Valtteri Bottas",
@@ -142,7 +142,7 @@
     "podiums": 67,
     "wins": 10,
     "points": 1787,
-    "driver_image": "image/drivers/bottas.svg"
+    "driver_image": "/images/drivers/bottas.svg"
   },
   {
     "name": "Zhou Guanyu",
@@ -155,7 +155,7 @@
     "podiums": 0,
     "wins": 0,
     "points": 6,
-    "driver_image": "image/drivers/zhou.svg"
+    "driver_image": "/images/drivers/zhou.svg"
   },             
   {
     "name": "Lance Stroll",
@@ -168,7 +168,7 @@
     "podiums": 3,
     "wins": 0,
     "points": 194,
-    "driver_image": "image/drivers/stroll.svg"
+    "driver_image": "/images/drivers/stroll.svg"
   },
   {
     "name": "Fernando Alonso",
@@ -181,7 +181,7 @@
     "podiums": 98,
     "wins": 32,
     "points": 2061,
-    "driver_image": "image/drivers/alonso.svg"
+    "driver_image": "/images/drivers/alonso.svg"
       
   },                 
   {
@@ -195,7 +195,7 @@
     "podiums": 1,
     "wins": 1,
     "points": 183,
-    "driver_image": "image/drivers/kevin_magnussen.svg"
+    "driver_image": "/images/drivers/kevin_magnussen.svg"
   },
   {
     "name": "Nico Hulkenberg",
@@ -208,7 +208,7 @@
     "podiums": 3,
     "wins": 3,
     "points": 521,
-    "driver_image": "image/drivers/hulkenberg.svg"
+    "driver_image": "/images/drivers/hulkenberg.svg"
   },                          
   {
     "name": "Nyck De Vries",
@@ -222,7 +222,7 @@
     "podiums": 0,
     "wins": 0,
     "points": 2,
-    "driver_image": "image/drivers/de_vries.svg"
+    "driver_image": "/images/drivers/de_vries.svg"
   },
   {
     "name": "Yuki Tsunoda",
@@ -248,7 +248,7 @@
     "podiums": 2,
     "wins": 0,
     "points": 201,
-    "driver_image": "image/drivers/albon.svg"
+    "driver_image": "/images/drivers/albon.svg"
   },
   {
     "name": "Logan Sargeant",
@@ -262,6 +262,6 @@
     "podiums": 0,
     "wins": 0,
     "points": 0,
-    "driver_image": "image/drivers/sargeant.svg"
+    "driver_image": "/images/drivers/sargeant.svg"
   }  
 ]

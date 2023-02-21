@@ -58,7 +58,7 @@ const TrumpCard = ({ player, card, getUserAttVal, getUserAttName, userAttName, g
 
 
 const EXP = card.experience;
-const TRK = card.teamRanking;
+const TRK = card.team_ranking;
 const WIN = card.wins;
 const POD = card.podiums;
 // const CHA = card.championships;
@@ -86,7 +86,7 @@ if(userAttName === 'Podiums'){ getAIAttVal(POD)};
         
         <div className="driver-wrap">
           <img className="team-logo" src="../../../images/teams/mercedes.svg" alt="Team" />
-          <img className="driver-image" src="../../images/drivers/hamilton.svg" alt="Driver" />
+          <img className="driver-image" src={card.driver_image} alt="Driver" />
           <img className="card-brand" src="../../images/logo2.svg" alt="Team" />
 
           <div className="name-banner">
@@ -101,7 +101,7 @@ if(userAttName === 'Podiums'){ getAIAttVal(POD)};
           <div className="divider"></div>
           <div className="stat-wrap" onClick={() => {getUserAttVal(TRK); getUserAttName('Team Ranking'); nextRound()}}/*onClick={flipCard}*/>
             <p className="stat-title">Team Ranking</p>
-            <p className="data team">{card.teamRanking}</p>
+            <p className="data team">{card.team_ranking}</p>
           </div>
           <div className="divider"></div>
           <div className="stat-wrap" onClick={() => {getUserAttVal(WIN); getUserAttName('# of Wins'); nextRound()}}/*onClick={flipCard}*/>
