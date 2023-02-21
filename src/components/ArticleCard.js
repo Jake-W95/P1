@@ -23,7 +23,7 @@ const ArticleCard = ({ article, imageUrls }) => {
           variants={variants}
           initial="right"
           animate={inView ? "visible" : "right"}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          transition={{ duration: 0.4, ease: "easeInOut", type: "spring", stiffness: 260, damping: 20 }}
         >
           {imageUrls && <img className="article-image" src={imageUrls} alt={title} />}
           <div className="article-text">

@@ -2,8 +2,6 @@ import Jumbo from "../../components/Jumbo";
 import Featured from "../../components/Featured";
 import Articles from "../../components/Articles";
 import Schedule from "../../components/Schedule";
-
-import Footer from "../../components/Footer";
 import "./landing.css";
 
 const Landing = () => {
@@ -25,7 +23,6 @@ const Landing = () => {
           <Schedule />
         </section>
       </main>
-      <Footer />
     </>
   );
 };

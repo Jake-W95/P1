@@ -1,104 +1,60 @@
-import React, { useState } from "react";
+// import { motion } from "framer-motion";
+// import { useInView } from "react-intersection-observer";
+
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Form from "../../components/Form";
 import "./mailing.css";
 
-// STATE VARIABLES DECLARED
 function Mailing() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(false);
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
-  // ALL FIELDS NEED TO BE FILLED
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!name || !email || !message) {
-      setError("Please fill in all fields.");
-      return;
-    }
-    setIsLoading(true);
-    setError(null);
-    setSuccess(false);
+  const variants = {
+    left: { x: "-15vw", opacity: 0 },
+    right: { x: "15vw", opacity: 0 },
 
-    // DEMOSTRATING DATA THAT CAN BE SENT TO A SERVER AND SEND BACK THE DATA ENTERED, IN THIS CASE A DATA OBJECT LOGGED TO THE CONSOLE
-    const data = { name, email, message };
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        setIsLoading(false);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setSuccess(true);
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        console.error("There was an error!", error);
-        setError(error.message);
-      });
+    visible: { x: 0, opacity: 1 },
   };
 
-  // CLEAR THE FORM AND REMOVE THE ERROR
-  const clearForm = () => {
-    setName("");
-    setEmail("");
-    setMessage("");
-    setError(null);
-    setSuccess(false);
-  };
-
-  // RENDER TO THE CONSOLE
   return (
-    <div className="form">
-      <h1>Contact</h1>
-      <p className="mail-text">
-        Please fill out the form below to get in touch with us.
-      </p>
-      <form onSubmit={handleSubmit} className="mailing-form">
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
-
-        {isLoading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
-        {success && <p>Message sent successfully!</p>}
-
-        <button type="submit">Send</button>
-
-        <button type="button" className="clearform" onClick={clearForm}>
-          Clear form
-        </button>
-      </form>
-    </div>
+    <section className="contact">
+      <h1 className="page-title">It's Time to Box</h1>
+      <div className="contact-wrap container-fluid">
+        <div className="row">
+          <div className="contact-image-wrap col-12 col-lg-6">
+            <motion.img
+              className="contact-img"
+              src="./images/pitstop.png"
+              alt="Pitcrew servicing an F1 car"
+              ref={ref}
+              variants={variants}
+              initial="left"
+              animate={inView ? "visible" : "left"}
+              transition={{ duration: 0.4, ease: "easeInOut", type: "spring", stiffness: 260, damping: 20 }}
+            />
+          </div>
+          <motion.div
+            className="contact-form-wrap col-12 col-lg-6"
+            ref={ref}
+            variants={variants}
+            initial="right"
+            animate={inView ? "visible" : "right"}
+            transition={{ duration: 0.4, ease: "easeInOut", type: "spring", stiffness: 260, damping: 20 }}
+          >
+            <h3 className="contact-text">Make a pitstop and connect with us!</h3>
+            <p className="contact-text">
+              Join the conversation about all things F1! Use the form below to reach out to our team of experts with
+              your questions, comments, or feedback. We're always happy to hear from fellow F1 enthusiasts and look
+              forward to connecting with you.
+            </p>
+            <Form />
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 }
 

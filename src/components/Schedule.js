@@ -38,7 +38,7 @@ const Schedule = () => {
           const hours = Math.floor(duration.asHours());
           const minutes = duration.minutes();
           const seconds = duration.seconds();
-          setTimeToNextRace(`The ${nextRaceTitle} begins in: ${hours}h, ${minutes}m, ${seconds}s`);
+          setTimeToNextRace(`The ${nextRaceTitle} is starting in: ${hours}h, ${minutes}m, ${seconds}s`);
         }
       })();
     }, 1000);
@@ -54,8 +54,8 @@ const Schedule = () => {
   return (
     <section className="schedule">
       <div className="schedule-container">
-        <h2>Upcoming Calendar:</h2>
-        <p> {timeToNextRace && <span>{timeToNextRace}</span>}</p>
+        <h2 className="schedule-title">Upcoming Calendar:</h2>
+        <p className="schedule-countdown"> {timeToNextRace && <span>{timeToNextRace}</span>}</p>
         <div className="schedule-wrapper row">
           {filteredRaceSchedule.map((race) => (
             <ScheduleCard key={race.round} race={race} />

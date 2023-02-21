@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import "./standings.css";
+import { motion } from "framer-motion";
+
 import TeamStandings from "./TeamStandings";
+import "./standings.css";
 
 // STATE VARIABLES
 function Standings() {
@@ -19,9 +21,7 @@ function Standings() {
         `https://ergast.com/api/f1/${selectedYear}/driverStandings.json`
       );
       const data = await response.json();
-      setStandings(
-        data.MRData.StandingsTable.StandingsLists[0].DriverStandings
-      );
+      setStandings(data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
     };
 
     fetchDriverStandings();
@@ -34,10 +34,7 @@ function Standings() {
 
   //IF NO TEAM IMAGE JUST DISPLAY TEAM NAME
   const handleTeamImageError = (driver) => {
-    setTeamImageErrors((prevState) => [
-      ...prevState,
-      driver.Constructors[0].constructorId,
-    ]);
+    setTeamImageErrors((prevState) => [...prevState, driver.Constructors[0].constructorId]);
   };
 
   const handleDisplayTeamRanking = () => {
@@ -57,57 +54,44 @@ function Standings() {
 
   // RENDERING DATA TO THE DOM
   return (
-    <div>
-      <div>
-        {showTeamRanking ? (
+    <section className="standings-container">
+      <div className="title-wrap">
+        <h1 className="page-title">{showHeading ? "Driver Standings" : "Team Standings"}</h1>
+      </div>
+      <div className="btn-wrap">
+        <div className="btn-wrap-standings">
           <button
+            id="test"
             className="standingsBtn"
-            onClick={handleDisplayDriverStandings}
+            onClick={showTeamRanking ? handleDisplayDriverStandings : handleDisplayTeamRanking}
           >
-            Driver Standings
+            {showTeamRanking ? "Driver Standings" : "Team Ranking"}
           </button>
-        ) : (
-          <button className="standingsBtn" onClick={handleDisplayTeamRanking}>
-            Team Ranking
-          </button>
-        )}
+        </div>
 
         {showHeading && (
-          <>
-            <h1>F1 Driver Standings</h1>
-            <div>
-              <label className="standingsLbl" htmlFor="yearSelect">
-                Select year:{" "}
-              </label>
-              <select
-                className="standingsDrop"
-                value={selectedYear}
-                onChange={handleSelectYear}
-              >
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-                <option value="2019">2019</option>
-                <option value="2018">2018</option>
-                <option value="2017">2017</option>
-              </select>
-            </div>
-          </>
+          <div className="dropdown">
+            <label className="standingsLbl" htmlFor="yearSelect"></label>
+            <select className="standingsDrop" value={selectedYear} onChange={handleSelectYear}>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+            </select>
+          </div>
         )}
       </div>
       {showTeamRanking && (
         <div>
-          <TeamStandings
-            selectedYear={selectedYear}
-            showTeamRanking={showTeamRanking}
-            handleDisplayDriverStandings={handleDisplayDriverStandings}
-          />
+          <TeamStandings selectedYear={selectedYear} showTeamRanking={showTeamRanking} />
         </div>
       )}
       {!showTeamRanking && (
         <div>
-          <table>
+          <motion.table initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
             <thead>
               <tr>
                 <th>Position</th>
@@ -126,33 +110,24 @@ function Standings() {
                       alt={driver.Driver.driverId}
                       className="driver-svg"
                       style={{
-                        display: driverImageErrors.includes(
-                          driver.Driver.driverId
-                        )
-                          ? "none"
-                          : "block",
+                        backgroundColor: driverImageErrors.includes(driver.Driver.driverId) ? "grey" : "",
                       }}
                       onError={() => handleImageError(driver)}
                     />
                     {driver.Driver.givenName} {driver.Driver.familyName}
                   </td>
                   <td>
-                    {driver.Constructors[0] &&
-                      driver.Constructors[0].constructorId && (
-                        <img
-                          src={`images/teams/${driver.Constructors[0].constructorId}.svg`}
-                          alt={driver.Constructors[0].constructorId}
-                          className="team-svg"
-                          style={{
-                            display: teamImageErrors.includes(
-                              driver.Constructors[0].constructorId
-                            )
-                              ? "none"
-                              : "block",
-                          }}
-                          onError={() => handleTeamImageError(driver)}
-                        />
-                      )}
+                    {driver.Constructors[0] && driver.Constructors[0].constructorId && (
+                      <img
+                        src={`images/teams/${driver.Constructors[0].constructorId}.svg`}
+                        alt={driver.Constructors[0].constructorId}
+                        className="team-svg"
+                        style={{
+                          backgroundColor: teamImageErrors.includes(driver.Constructors[0].constructorId) ? "grey" : "",
+                        }}
+                        onError={() => handleTeamImageError(driver)}
+                      />
+                    )}
 
                     {driver.Constructors[0]?.name}
                   </td>
@@ -160,10 +135,10 @@ function Standings() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </motion.table>
         </div>
       )}
-    </div>
+    </section>
   );
 }
 
