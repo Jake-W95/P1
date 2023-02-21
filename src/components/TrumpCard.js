@@ -61,14 +61,15 @@ const EXP = card.experience;
 const TRK = card.team_ranking;
 const WIN = card.wins;
 const POD = card.podiums;
+const RTG = card.rating;
 // const CHA = card.championships;
-// const RTG = card.rating;
 
 
 if(userAttName === 'Experience'){ getAIAttVal(EXP)};
 if(userAttName === 'Team Ranking'){ getAIAttVal(TRK)};
 if(userAttName === '# of Wins'){ getAIAttVal(WIN)};
 if(userAttName === 'Podiums'){ getAIAttVal(POD)};
+if(userAttName === 'Rating'){ getAIAttVal(RTG)};
 
 
 
@@ -114,14 +115,15 @@ if(userAttName === 'Podiums'){ getAIAttVal(POD)};
             <p className="data podiums">{card.podiums}</p>
           </div>
           <div className="divider"></div>
+          <div className="stat-wrap" onClick={() => {getUserAttVal(RTG); getUserAttName('Rating'); nextRound()}}/*onClick={flipCard}*/>
+            <p className="stat-title">Rating</p>
+            <p className="data score">{card.rating}</p>
+          </div>
+          <div className="divider"></div>
+
           <div className="stat-wrap" /*onClick={flipCard}*/>
             <p className="stat-title">Championships</p>
             <p className="data championships">{card.championships}</p>
-          </div>
-          <div className="divider"></div>
-          <div className="stat-wrap" /*onClick={flipCard}*/>
-            <p className="stat-title">Rating</p>
-            <p className="data score">{card.driverRating}</p>
           </div>
         </div>
       </motion.div>
