@@ -4,7 +4,7 @@ function deal(deck) {
     const hand1 = [];
     const hand2 = [];
 
-    for (C of deck) {
+    for (let C of deck) {
         if (hand1.length <= hand2.length) {
             hand1.push(C)
         } else {
