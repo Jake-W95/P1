@@ -2,6 +2,7 @@
   {
     "name": "Lewis Hamilton",
     "team": "Mercedes",
+    "team_image": "images/teams/mercedes.svg",
     "nationality": "British",
     "experience": 15,
     "team_ranking": 3,
@@ -10,11 +11,12 @@
     "podiums": 191,
     "wins": 103,
     "points": 4405.5,
-    "driver_image": "image/drivers/hamilton.svg" 
+    "driver_image": "/images/drivers/hamilton.svg" 
   },
   {
     "name": "George Russell",
     "team": "Mercedes",
+    "team_image": "images/teams/mercedes.svg",
     "nationality": "British",
     "experience": 3,
     "team_ranking": 3,
@@ -23,11 +25,12 @@
     "podiums": 9,
     "wins": 1,
     "points": 294,
-    "driver_image": "image/drivers/russell.svg" 
+    "driver_image": "/images/drivers/russell.svg" 
   },
   {
     "name": "Charles Leclerc",
     "team": "Ferrari",
+    "team_image": "images/teams/ferrari.svg",
     "nationality": "Monégasque",
     "experience": 3,
     "team_ranking": 2,
@@ -36,11 +39,13 @@
     "podiums": 24,
     "wins": 5,
     "points": 868,
-    "driver_image": "image/drivers/leclerc.svg"
+    "driver_image": "/images/drivers/leclerc.svg"
   },
   {
     "name": "Carlos Sainz Jr",
     "team": "Ferrari",
+    "team_image": "images/teams/ferrari.svg",
+
     "nationality": "Spanish",
     "experience": 6,
     "team_ranking": 2,
@@ -50,11 +55,13 @@
     "podiums": 15,
     "wins": 1,
     "points": 782.5,
-    "driver_image": "image/drivers/sainz.svg"
+    "driver_image": "/images/drivers/sainz.svg"
   },    
   {
     "name": "Max Verstappen",
     "team": "Red Bull Racing",
+    "team_image": "images/teams/red_bull.svg",
+
     "nationality": "Dutch",
     "experience": 7,
     "team_ranking": 1,
@@ -63,11 +70,12 @@
     "podiums": 77,
     "wins": 35,
     "points": 2011.5,
-    "driver_image": "image/drivers/max_verstappen.svg"
+    "driver_image": "/images/drivers/max_verstappen.svg"
   },
   {
     "name": "Sergio Perez",
     "team": "Red Bull Racing",
+    "team_image": "images/teams/red_bull.svg",
     "nationality": "Mexican",
     "experience": 11,
     "team_ranking": 1,
@@ -76,11 +84,13 @@
     "podiums": 26,
     "wins": 4,
     "points": 1201,
-    "driver_image": "image/drivers/perez.svg"
+    "driver_image": "/images/drivers/perez.svg"
   },     
   {
     "name": "Esteban Ocon",
     "team": "Alpine F1 Team",
+    "team_image": "images/teams/alpine.svg",
+
     "nationality": "French",
     "experience": 4,
     "team_ranking": 4,
@@ -89,12 +99,13 @@
     "podiums": 2,
     "wins": 1,
     "points": 364,
-    "driver_image": "image/drivers/ocon.svg"
+    "driver_image": "/images/drivers/ocon.svg"
 
   },
   {
     "name": "Pierre Gasly",
     "team": "Alpine F1 Team",
+    "team_image": "images/teams/alpine.svg",
     "nationality": "French",
     "experience": 4,
     "team_ranking": 4,
@@ -103,11 +114,12 @@
     "podiums": 3,
     "wins": 1,
     "points": 332,
-    "driver_image": "image/drivers/gasly.svg"
+    "driver_image": "/images/drivers/gasly.svg"
   },            
   {
     "name": "Oscar Piastri",
     "team": "McLaren F1 Team",
+    "team_image": "images/teams/mclaren.svg",
     "nationality": "Australian",
     "experience": 0,
     "team_ranking": 5,
@@ -116,11 +128,12 @@
     "podiums": 0,
     "wins": 0,
     "points": 0,
-    "driver_image": "image/drivers/piastri.svg"
+    "driver_image": "/images/drivers/piastri.svg"
   },
   {
     "name": "Lando Norris",
     "team": "McLaren F1 Team",
+    "team_image": "images/teams/mclaren.svg",
     "nationality": "British",
     "experience": 3,
     "team_ranking": 5,
@@ -129,11 +142,12 @@
     "podiums": 6,
     "wins": 0,
     "points": 428,
-    "driver_image": "image/drivers/norris.svg"
+    "driver_image": "/images/drivers/norris.svg"
   },          
   {
     "name": "Valtteri Bottas",
     "team": "Alfa Romeo Racing ORLEN",
+    "team_image": "images/teams/alfa.svg",
     "nationality": "Finnish",
     "experience": 10,
     "team_ranking": 6,
@@ -142,11 +156,12 @@
     "podiums": 67,
     "wins": 10,
     "points": 1787,
-    "driver_image": "image/drivers/bottas.svg"
+    "driver_image": "/images/drivers/bottas.svg"
   },
   {
     "name": "Zhou Guanyu",
     "team": "Alfa Romeo Racing ORLEN",
+    "team_image": "images/teams/alfa.svg",
     "nationality": "Chinese",
     "experience": 0,
     "team_ranking": 6,
@@ -155,11 +170,12 @@
     "podiums": 0,
     "wins": 0,
     "points": 6,
-    "driver_image": "image/drivers/zhou.svg"
+    "driver_image": "/images/drivers/zhou.svg"
   },             
   {
     "name": "Lance Stroll",
     "team": "Aston Martin Cognizant F1 Team",
+    "team_image": "images/teams/aston_martin.svg",
     "nationality": "Canadian",
     "experience": 4,
     "team_ranking": 7,
@@ -168,11 +184,12 @@
     "podiums": 3,
     "wins": 0,
     "points": 194,
-    "driver_image": "image/drivers/stroll.svg"
+    "driver_image": "/images/drivers/stroll.svg"
   },
   {
     "name": "Fernando Alonso",
     "team": "Aston Martin Cognizant F1 Team",
+    "team_image": "images/teams/aston_martin.svg",
     "nationality": "Spanish",
     "experience": 20,
     "team_ranking": 7,
@@ -181,12 +198,13 @@
     "podiums": 98,
     "wins": 32,
     "points": 2061,
-    "driver_image": "image/drivers/alonso.svg"
+    "driver_image": "/images/drivers/alonso.svg"
       
   },                 
   {
     "name": "Kevin Magnussen",
     "team": "Haas F1 Team",
+    "team_image": "images/teams/haas.svg",
     "nationality": "Danish",
     "experience": 7,
     "team_ranking": 8,
@@ -195,11 +213,12 @@
     "podiums": 1,
     "wins": 1,
     "points": 183,
-    "driver_image": "image/drivers/kevin_magnussen.svg"
+    "driver_image": "/images/drivers/kevin_magnussen.svg"
   },
   {
     "name": "Nico Hulkenberg",
     "team": "Haas F1 Team",
+    "team_image": "images/teams/haas.svg",
     "nationality": "German",
     "experience": 10,
     "team_ranking": 8,
@@ -208,11 +227,12 @@
     "podiums": 3,
     "wins": 3,
     "points": 521,
-    "driver_image": "image/drivers/hulkenberg.svg"
+    "driver_image": "/images/drivers/hulkenberg.svg"
   },                          
   {
     "name": "Nyck De Vries",
     "team": "Scuderia AlphaTauri Honda",
+    "team_image": "images/teams/alphatauri.svg",
     "nationality": "Dutch",
     "experience": 1,
     "team_ranking": 9,
@@ -222,11 +242,12 @@
     "podiums": 0,
     "wins": 0,
     "points": 2,
-    "driver_image": "image/drivers/de_vries.svg"
+    "driver_image": "/images/drivers/de_vries.svg"
   },
   {
     "name": "Yuki Tsunoda",
     "team": "Scuderia AlphaTauri Honda",
+    "team_image": "images/teams/alphatauri.svg",
     "nationality": "Japanese",
     "experience": 1,
     "team_ranking": 9,
@@ -235,11 +256,13 @@
     "overall_podiums": 0,
     "podiums": 0,
     "wins": 0,
-    "points": 32
+    "points": 32,
+    "driver_image": "/images/drivers/tsunoda.svg"
   },
   {
     "name": "Alexander Albon",
     "team": "Williams Racing",
+    "team_image": "images/teams/williams.svg",
     "nationality": "Thai",
     "experience": 2,
     "team_ranking": 10,
@@ -248,11 +271,12 @@
     "podiums": 2,
     "wins": 0,
     "points": 201,
-    "driver_image": "image/drivers/albon.svg"
+    "driver_image": "/images/drivers/albon.svg"
   },
   {
     "name": "Logan Sargeant",
     "team": "Williams Racing",
+    "team_image": "images/teams/williams.svg",
     "nationality": "American",
     "experience": 0,
     "team_ranking": 10,
@@ -262,6 +286,6 @@
     "podiums": 0,
     "wins": 0,
     "points": 0,
-    "driver_image": "image/drivers/sargeant.svg"
+    "driver_image": "/images/drivers/sargeant.svg"
   }  
 ]

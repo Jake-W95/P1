@@ -58,17 +58,18 @@ const TrumpCard = ({ player, card, getUserAttVal, getUserAttName, userAttName, g
 
 
 const EXP = card.experience;
-const TRK = card.teamRanking;
+const TRK = card.team_ranking;
 const WIN = card.wins;
 const POD = card.podiums;
+const RTG = card.rating;
 // const CHA = card.championships;
-// const RTG = card.rating;
 
 
 if(userAttName === 'Experience'){ getAIAttVal(EXP)};
 if(userAttName === 'Team Ranking'){ getAIAttVal(TRK)};
 if(userAttName === '# of Wins'){ getAIAttVal(WIN)};
 if(userAttName === 'Podiums'){ getAIAttVal(POD)};
+if(userAttName === 'Rating'){ getAIAttVal(RTG)};
 
 
 
@@ -85,8 +86,8 @@ if(userAttName === 'Podiums'){ getAIAttVal(POD)};
       <motion.div className="front" layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
         
         <div className="driver-wrap">
-          <img className="team-logo" src="../../../images/teams/mercedes.svg" alt="Team" />
-          <img className="driver-image" src="../../images/drivers/hamilton.svg" alt="Driver" />
+          <img className="team-logo" src={card.team_image} alt="Team" />
+          <img className="driver-image" src={card.driver_image} alt="Driver" />
           <img className="card-brand" src="../../images/logo2.svg" alt="Team" />
 
           <div className="name-banner">
@@ -94,14 +95,14 @@ if(userAttName === 'Podiums'){ getAIAttVal(POD)};
           </div>
         </div>
         <div className="stats-container" >
-          <div className="stat-wrap" onClick={() => {getUserAttVal(EXP); getUserAttName('Experience'); nextRound()}}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {getUserAttVal(EXP); getUserAttName('Experience'); nextRound(); }}>
             <p className="stat-title">Experience</p>
             <p className="data experience" >{card.experience}</p>
           </div>
           <div className="divider"></div>
           <div className="stat-wrap" onClick={() => {getUserAttVal(TRK); getUserAttName('Team Ranking'); nextRound()}}/*onClick={flipCard}*/>
             <p className="stat-title">Team Ranking</p>
-            <p className="data team">{card.teamRanking}</p>
+            <p className="data team">{card.team_ranking}</p>
           </div>
           <div className="divider"></div>
           <div className="stat-wrap" onClick={() => {getUserAttVal(WIN); getUserAttName('# of Wins'); nextRound()}}/*onClick={flipCard}*/>
@@ -114,15 +115,12 @@ if(userAttName === 'Podiums'){ getAIAttVal(POD)};
             <p className="data podiums">{card.podiums}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" /*onClick={flipCard}*/>
-            <p className="stat-title">Championships</p>
-            <p className="data championships">{card.championships}</p>
-          </div>
-          <div className="divider"></div>
-          <div className="stat-wrap" /*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {getUserAttVal(RTG); getUserAttName('Rating'); nextRound()}}/*onClick={flipCard}*/>
             <p className="stat-title">Rating</p>
-            <p className="data score">{card.driverRating}</p>
+            <p className="data score">{card.rating}</p>
           </div>
+          
+
         </div>
       </motion.div>
       <motion.div className="back" onClick={flipCard} layout animate={{ rotateY: isFlipped ? 0 : -180 }}></motion.div>
