@@ -2,6 +2,7 @@
   {
     "name": "Lewis Hamilton",
     "team": "Mercedes",
+    "team_image": "images/teams/mercedes.svg",
     "nationality": "British",
     "experience": 15,
     "team_ranking": 3,
@@ -15,6 +16,7 @@
   {
     "name": "George Russell",
     "team": "Mercedes",
+    "team_image": "images/teams/mercedes.svg",
     "nationality": "British",
     "experience": 3,
     "team_ranking": 3,
@@ -28,6 +30,7 @@
   {
     "name": "Charles Leclerc",
     "team": "Ferrari",
+    "team_image": "images/teams/ferrari.svg",
     "nationality": "Monégasque",
     "experience": 3,
     "team_ranking": 2,
@@ -41,6 +44,8 @@
   {
     "name": "Carlos Sainz Jr",
     "team": "Ferrari",
+    "team_image": "images/teams/ferrari.svg",
+
     "nationality": "Spanish",
     "experience": 6,
     "team_ranking": 2,
@@ -55,6 +60,8 @@
   {
     "name": "Max Verstappen",
     "team": "Red Bull Racing",
+    "team_image": "images/teams/red_bull.svg",
+
     "nationality": "Dutch",
     "experience": 7,
     "team_ranking": 1,
@@ -68,6 +75,7 @@
   {
     "name": "Sergio Perez",
     "team": "Red Bull Racing",
+    "team_image": "images/teams/red_bull.svg",
     "nationality": "Mexican",
     "experience": 11,
     "team_ranking": 1,
@@ -81,6 +89,8 @@
   {
     "name": "Esteban Ocon",
     "team": "Alpine F1 Team",
+    "team_image": "images/teams/alpine.svg",
+
     "nationality": "French",
     "experience": 4,
     "team_ranking": 4,
@@ -95,6 +105,7 @@
   {
     "name": "Pierre Gasly",
     "team": "Alpine F1 Team",
+    "team_image": "images/teams/alpine.svg",
     "nationality": "French",
     "experience": 4,
     "team_ranking": 4,
@@ -108,6 +119,7 @@
   {
     "name": "Oscar Piastri",
     "team": "McLaren F1 Team",
+    "team_image": "images/teams/mclaren.svg",
     "nationality": "Australian",
     "experience": 0,
     "team_ranking": 5,
@@ -121,6 +133,7 @@
   {
     "name": "Lando Norris",
     "team": "McLaren F1 Team",
+    "team_image": "images/teams/mclaren.svg",
     "nationality": "British",
     "experience": 3,
     "team_ranking": 5,
@@ -134,6 +147,7 @@
   {
     "name": "Valtteri Bottas",
     "team": "Alfa Romeo Racing ORLEN",
+    "team_image": "images/teams/alfa.svg",
     "nationality": "Finnish",
     "experience": 10,
     "team_ranking": 6,
@@ -147,6 +161,7 @@
   {
     "name": "Zhou Guanyu",
     "team": "Alfa Romeo Racing ORLEN",
+    "team_image": "images/teams/alfa.svg",
     "nationality": "Chinese",
     "experience": 0,
     "team_ranking": 6,
@@ -160,6 +175,7 @@
   {
     "name": "Lance Stroll",
     "team": "Aston Martin Cognizant F1 Team",
+    "team_image": "images/teams/aston_martin.svg",
     "nationality": "Canadian",
     "experience": 4,
     "team_ranking": 7,
@@ -173,6 +189,7 @@
   {
     "name": "Fernando Alonso",
     "team": "Aston Martin Cognizant F1 Team",
+    "team_image": "images/teams/aston_martin.svg",
     "nationality": "Spanish",
     "experience": 20,
     "team_ranking": 7,
@@ -187,6 +204,7 @@
   {
     "name": "Kevin Magnussen",
     "team": "Haas F1 Team",
+    "team_image": "images/teams/haas.svg",
     "nationality": "Danish",
     "experience": 7,
     "team_ranking": 8,
@@ -200,6 +218,7 @@
   {
     "name": "Nico Hulkenberg",
     "team": "Haas F1 Team",
+    "team_image": "images/teams/haas.svg",
     "nationality": "German",
     "experience": 10,
     "team_ranking": 8,
@@ -213,6 +232,7 @@
   {
     "name": "Nyck De Vries",
     "team": "Scuderia AlphaTauri Honda",
+    "team_image": "images/teams/alphatauri.svg",
     "nationality": "Dutch",
     "experience": 1,
     "team_ranking": 9,
@@ -227,6 +247,7 @@
   {
     "name": "Yuki Tsunoda",
     "team": "Scuderia AlphaTauri Honda",
+    "team_image": "images/teams/alphatauri.svg",
     "nationality": "Japanese",
     "experience": 1,
     "team_ranking": 9,
@@ -240,6 +261,7 @@
   {
     "name": "Alexander Albon",
     "team": "Williams Racing",
+    "team_image": "images/teams/williams.svg",
     "nationality": "Thai",
     "experience": 2,
     "team_ranking": 10,
@@ -253,6 +275,7 @@
   {
     "name": "Logan Sargeant",
     "team": "Williams Racing",
+    "team_image": "images/teams/williams.svg",
     "nationality": "American",
     "experience": 0,
     "team_ranking": 10,

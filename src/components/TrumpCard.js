@@ -85,7 +85,7 @@ if(userAttName === 'Podiums'){ getAIAttVal(POD)};
       <motion.div className="front" layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
         
         <div className="driver-wrap">
-          <img className="team-logo" src="../../../images/teams/mercedes.svg" alt="Team" />
+          <img className="team-logo" src={card.team_image} alt="Team" />
           <img className="driver-image" src={card.driver_image} alt="Driver" />
           <img className="card-brand" src="../../images/logo2.svg" alt="Team" />
 
