@@ -67,33 +67,43 @@ const Game = () => {
   }
 
   const nextRound = () => {
-
-    if (userAttVal > AIAttVal) {
-      winCard();
-      increment()
-    } else if (userAttVal < AIAttVal) {
-      loseCard();
-      increment()
-    } else if (userAttVal === AIAttVal && userAttName !== undefined) {
-      increment()
+    if (userAttName === 'Team Ranking') {
+      if (userAttVal < AIAttVal) {
+        winCard();
+        increment()
+      } else if (userAttVal > AIAttVal) {
+        loseCard();
+        increment()
+      } else if (userAttVal === AIAttVal && userAttName !== undefined) {
+        increment()
+      }
+    } else {
+      if (userAttVal > AIAttVal) {
+        winCard();
+        increment()
+      } else if (userAttVal < AIAttVal) {
+        loseCard();
+        increment()
+      } else if (userAttVal === AIAttVal && userAttName !== undefined) {
+        increment()
+      }
     }
   }
-
-  // console.log('i' + i, ' j ' + j);
-  // console.log('H1 ', hand1.length, hand1[i].name, '     H2', hand2.length, hand2[j].name)
 
 
   // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
   const [AIFlip, setAIFlip] = useState(false)
   const flipAICard = () => setAIFlip(true)
 
+  //  Boolean controlling display of game instructions
   const [showInstructions, setShowInstructions] = useState(true)
+  //  Function used to toggle showInstructions true/false
   const toggleInstructions = () => setShowInstructions(!showInstructions)
-  console.log(showInstructions)
+
   //  Win State
   if (hand1.length === 20) {
     return (
-      
+
       <>
         <h1>You Won!</h1>
         <button onClick={() => Game}>Play Again?</button></>
@@ -112,11 +122,11 @@ const Game = () => {
   else {
     return (
       <>
-   <GameInstructions toggleInstructions={toggleInstructions} showInstructions={showInstructions}/>
-   
-      <section className="game-container">
+        <GameInstructions toggleInstructions={toggleInstructions} showInstructions={showInstructions} />
 
-        {/* <div>
+        <section className="game-container">
+
+          {/* <div>
           {hand1.map(card => {
             return (
               <li key={card.name}>
@@ -126,19 +136,19 @@ const Game = () => {
           })}
           
         </div> */}
-        <div className="row">
-          <div className="col-12 col-md-6">
-            <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} />
-            <h1>Cards Remaining:</h1>
-            <h2 style={{textAlign: "center"}}>{hand1.length}</h2>
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} />
+              <h1>Cards Remaining:</h1>
+              <h2 style={{ textAlign: "center" }}>{hand1.length}</h2>
+            </div>
+            <div className="col-12 col-md-6">
+              <TrumpCard player="computer" card={hand2[j]} userAttName={userAttName} getAIAttVal={getAIVal} flipAICard={flipAICard} />
+              <h1>Cards Remaining:</h1>
+              <h2 style={{ textAlign: "center" }}>{hand2.length}</h2>
+            </div>
           </div>
-          <div className="col-12 col-md-6">
-            <TrumpCard player="computer" card={hand2[j]} userAttName={userAttName} getAIAttVal={getAIVal} flipAICard={flipAICard} />
-            <h1>Cards Remaining:</h1>
-            <h2 style={{textAlign: "center"}}>{hand2.length}</h2>
-          </div>
-        </div>
-        {/* <div>
+          {/* <div>
           <h3>{AIAttVal}</h3> 
           {hand2.map(card => {
             return (
@@ -148,7 +158,7 @@ const Game = () => {
             )
           })}
         </div> */}
-      </section>
+        </section>
       </>
     );
   }
