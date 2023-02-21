@@ -256,7 +256,8 @@
     "overall_podiums": 0,
     "podiums": 0,
     "wins": 0,
-    "points": 32
+    "points": 32,
+    "driver_image": "/images/drivers/tsunoda.svg"
   },
   {
     "name": "Alexander Albon",
