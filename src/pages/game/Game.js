@@ -35,7 +35,7 @@ const Game = () => {
   // State Getting AI's Att Value for comparison
   const [AIAttVal, setAIAttVal] = useState(undefined)
 
-  const getAIVal = (AIAttVal) => { setAIAttVal(AIAttVal) }
+  // const getAIVal = (AIAttVal) => { setAIAttVal(AIAttVal) }
 
   // Value Comparison
   // let WLD = ''
@@ -65,6 +65,9 @@ const Game = () => {
     j === hand2.length ? setj(0) : setj(j++);
 
   }
+  // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
+  const [AIFlip, setAIFlip] = useState(true)
+  const flipAICard = () => setAIFlip(false)
 
   const nextRound = () => {
     if (userAttName === 'Team Ranking') {
@@ -77,6 +80,8 @@ const Game = () => {
       } else if (userAttVal === AIAttVal && userAttName !== undefined) {
         increment()
       }
+
+      setAIFlip(true)
     } else {
       if (userAttVal > AIAttVal) {
         winCard();
@@ -87,13 +92,15 @@ const Game = () => {
       } else if (userAttVal === AIAttVal && userAttName !== undefined) {
         increment()
       }
+      setAIFlip(true)
+
     }
+    setAIFlip(true)
+
+    console.log('bacon')
   }
 
 
-  // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
-  const [AIFlip, setAIFlip] = useState(false)
-  const flipAICard = () => setAIFlip(true)
 
   //  Boolean controlling display of game instructions
   const [showInstructions, setShowInstructions] = useState(true)
@@ -126,24 +133,14 @@ const Game = () => {
 
         <section className="game-container">
 
-          {/* <div>
-          {hand1.map(card => {
-            return (
-              <li key={card.name}>
-                {card.name}
-              </li>
-            )
-          })}
-          
-        </div> */}
           <div className="row">
             <div className="col-12 col-md-6">
-              <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} />
+              <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} flipAICard={flipAICard} />
               <h1>Cards Remaining:</h1>
               <h2 style={{ textAlign: "center" }}>{hand1.length}</h2>
             </div>
             <div className="col-12 col-md-6">
-              <TrumpCard player="computer" card={hand2[j]} userAttName={userAttName} getAIAttVal={getAIVal} flipAICard={flipAICard} />
+              <TrumpCard player="computer" card={hand2[j]} userAttName={userAttName} /*getAIAttVal={getAIVal}*/ AIFlip={AIFlip} />
               <h1>Cards Remaining:</h1>
               <h2 style={{ textAlign: "center" }}>{hand2.length}</h2>
             </div>

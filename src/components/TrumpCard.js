@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-const TrumpCard = ({ player, card, getUserAttVal, getUserAttName, userAttName, getAIAttVal, nextRound, flipAICard}) => {
+const TrumpCard = ({ player, card, getUserAttVal, getUserAttName, userAttName, /*getAIAttVal,*/ nextRound, flipAICard, AIFlip}) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
   });
 
-  // console.log(card)
-  const [isFlipped, setIsFlipped] = useState(false);
+  
+  // const [isFlipped, setIsFlipped] = useState(false);
 
-  const flipCard = () => setIsFlipped(!isFlipped);
+  // const flipCard = () => setIsFlipped(!isFlipped);
 
 
   const variants = {
@@ -65,13 +65,15 @@ const RTG = card.rating;
 // const CHA = card.championships;
 
 
-if(userAttName === 'Experience'){ getAIAttVal(EXP)};
-if(userAttName === 'Team Ranking'){ getAIAttVal(TRK)};
-if(userAttName === '# of Wins'){ getAIAttVal(WIN)};
-if(userAttName === 'Podiums'){ getAIAttVal(POD)};
-if(userAttName === 'Rating'){ getAIAttVal(RTG)};
+// if(userAttName === 'Experience'){ getAIAttVal(EXP)};
+// if(userAttName === 'Team Ranking'){ getAIAttVal(TRK)};
+// if(userAttName === '# of Wins'){ getAIAttVal(WIN)};
+// if(userAttName === 'Podiums'){ getAIAttVal(POD)};
+// if(userAttName === 'Rating'){ getAIAttVal(RTG)};
 
 
+
+console.log({AIFlip})
 
   return (
     <motion.div
@@ -82,8 +84,9 @@ if(userAttName === 'Rating'){ getAIAttVal(RTG)};
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       transition={{ duration: 0.4, ease: "easeInOut" }}
+      onClick={flipAICard}
     >
-      <motion.div className="front" layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
+      <motion.div className="front" layout animate={{ rotateY: AIFlip ? 180 : 0 }}>
         
         <div className="driver-wrap">
           <img className="team-logo" src={card.team_image} alt="Team" />
@@ -100,7 +103,7 @@ if(userAttName === 'Rating'){ getAIAttVal(RTG)};
             <p className="data experience" >{card.experience}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" onClick={() => {getUserAttVal(TRK); getUserAttName('Team Ranking'); nextRound()}}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {getUserAttVal(TRK); getUserAttName('Team Ranking'); nextRound() }}>
             <p className="stat-title">Team Ranking</p>
             <p className="data team">{card.team_ranking}</p>
           </div>
@@ -123,7 +126,7 @@ if(userAttName === 'Rating'){ getAIAttVal(RTG)};
 
         </div>
       </motion.div>
-      <motion.div className="back" onClick={flipCard} layout animate={{ rotateY: isFlipped ? 0 : -180 }}></motion.div>
+      <motion.div className="back" layout animate={{ rotateY: AIFlip ? 0 : -180 }}></motion.div>
     </motion.div>
   );
 };
