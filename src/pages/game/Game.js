@@ -86,6 +86,10 @@ const Game = () => {
   // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
   const [AIFlip, setAIFlip] = useState(false)
   const flipAICard = () => setAIFlip(true)
+
+  const [showInstructions, setShowInstructions] = useState(true)
+  const toggleInstructions = () => setShowInstructions(!showInstructions)
+  console.log(showInstructions)
   //  Win State
   if (hand1.length === 20) {
     return (
@@ -108,7 +112,8 @@ const Game = () => {
   else {
     return (
       <>
-   <GameInstructions />
+   <GameInstructions toggleInstructions={toggleInstructions} showInstructions={showInstructions}/>
+   
       <section className="game-container">
 
         {/* <div>
