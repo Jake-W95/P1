@@ -121,10 +121,6 @@ if(userAttName === 'Rating'){ getAIAttVal(RTG)};
           </div>
           <div className="divider"></div>
 
-          <div className="stat-wrap" /*onClick={flipCard}*/>
-            <p className="stat-title">Championships</p>
-            <p className="data championships">{card.championships}</p>
-          </div>
         </div>
       </motion.div>
       <motion.div className="back" onClick={flipCard} layout animate={{ rotateY: isFlipped ? 0 : -180 }}></motion.div>

@@ -19,16 +19,9 @@ import shuffleDeal from "../../gameScripts/gameLogic";
 
 const hands = shuffleDeal()
 const Game = () => {
-  // useEffect(()=> setHands(shuffleDeal()), [hands])
 
-  // const [hands, setHands] = useState([])
   let hand1 = hands[0];
   let hand2 = hands[1]
-  hand1.forEach(card => {
-    // console.log(card)
-  });
-
-
 
   // States Getting User's chosen Att Name and Value
   const [userAttVal, setUserAttVal] = useState(undefined)
