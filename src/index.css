@@ -46,7 +46,7 @@ body {
 /* --- || GLOBAL STYLES --- */
 
 .page-title {
-  font-size: 38px;
+  font-size: 32px;
   border-bottom: 2px solid var(--red);
   padding: 20px;
   color: var(--white);
@@ -134,6 +134,10 @@ header {
 
 /* --- || MEDIA QUERIES FOR LARGER SCREENS --- */
 @media (min-width: 750px) {
+  .page-title {
+    font-size: 38px;
+  }
+
   .links {
     display: flex;
     background-color: var(--white);

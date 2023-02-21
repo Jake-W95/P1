@@ -1,7 +1,7 @@
 /* --- STANDING STYLES--- */
 
 .standings-container {
-  padding: var(--spacing);
+  padding: 10px;
   background-color: var(--black);
 }
 
@@ -94,6 +94,12 @@ tr:nth-child(even) {
 }
 
 /* || MEDIA QUERIES */
+@media (min-width: 750px) {
+  .standings-container {
+    padding: var(--sm-spacing);
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .team-svg,
   .driver-svg {
