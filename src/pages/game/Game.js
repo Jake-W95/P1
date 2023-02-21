@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import TrumpCard from "../../components/TrumpCard";
 import "./game.css";
+import GameInstructions from "../../components/GameInstructions";
 
 // GAME LOGIC 
 import shuffleDeal from "../../gameScripts/gameLogic";
@@ -88,7 +89,7 @@ const Game = () => {
   //  Win State
   if (hand1.length === 20) {
     return (
-      // <WinGame />
+      
       <>
         <h1>You Won!</h1>
         <button onClick={() => Game}>Play Again?</button></>
@@ -106,6 +107,8 @@ const Game = () => {
   //  Game State
   else {
     return (
+      <>
+   <GameInstructions />
       <section className="game-container">
 
         {/* <div>
@@ -141,6 +144,7 @@ const Game = () => {
           })}
         </div> */}
       </section>
+      </>
     );
   }
 };
