@@ -95,7 +95,7 @@ if(userAttName === 'Rating'){ getAIAttVal(RTG)};
           </div>
         </div>
         <div className="stats-container" >
-          <div className="stat-wrap" onClick={() => {getUserAttVal(EXP); getUserAttName('Experience'); nextRound()}}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {getUserAttVal(EXP); getUserAttName('Experience'); nextRound(); }}>
             <p className="stat-title">Experience</p>
             <p className="data experience" >{card.experience}</p>
           </div>
@@ -119,7 +119,7 @@ if(userAttName === 'Rating'){ getAIAttVal(RTG)};
             <p className="stat-title">Rating</p>
             <p className="data score">{card.rating}</p>
           </div>
-          <div className="divider"></div>
+          
 
         </div>
       </motion.div>
