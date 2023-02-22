@@ -7,7 +7,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
   <!-- PROJECT LOGO -->
 
@@ -43,7 +42,7 @@ Welcome to P1, your virtual pit stop for the latest updates and standings in the
       <li>
         <a href="#about-the-project">About The Project</a>
         <ul>
-          <li><a href="#screenshot">Screenshot</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
           <li><a href="#built-with">Built With</a></li>
           <li><a href="#description">Description</a></li>
         </ul>
@@ -58,7 +57,6 @@ Welcome to P1, your virtual pit stop for the latest updates and standings in the
       <li>
           <a href="#usage">Usage</a>
         <ul>
-          <li><a href="#functionality">Functionality</a></li>
           <li><a href="#mobile-responsive">Mobile Responsive</a></li>
         </ul>
       </li>
@@ -66,7 +64,6 @@ Welcome to P1, your virtual pit stop for the latest updates and standings in the
       <li><a href="#contributing">Contributing</a></li>
       <li><a href="#tests">Tests</a></li>
       <li><a href="#questions">Questions</a></li>
-      <li><a href="#acknowledgments">Acknowledgments</a></li>
     </ol>
   </details>
   
@@ -74,10 +71,16 @@ Welcome to P1, your virtual pit stop for the latest updates and standings in the
   
   ## About The Project
   
-  ### Screenshot
+  ### Screenshots
   
-  [![P1 Screen Shot][product-screenshot]](https://Jake-W95.github.io/P1/)
-  
+[![P1 Screen Shot][landing-screenshot]](https://Jake-W95.github.io/P1/)
+
+[![P1 Screen Shot][standings-screenshot]](https://Jake-W95.github.io/P1/)
+
+[![P1 Screen Shot][contact-screenshot]](https://Jake-W95.github.io/P1/)
+
+[![P1 Screen Shot][game-screenshot]](https://Jake-W95.github.io/P1/)
+
   <p align="right"><a href="#readme-top">back to top</a></p>
   
   ### Built With
@@ -129,14 +132,6 @@ To get a local copy up and running follow these simple example steps.
   <!-- USAGE EXAMPLES -->
   
   ## Usage
-  
-  ### Functionality
-  
-  - The following animation demonstrates the applications functionality
-  
-    [![Functionality Gif][functionality-gif]](https://Jake-W95.github.io/P1/)
-
-  <p align="right"><a href="#readme-top">back to top</a></p>
   
   ### Mobile Responsive
   
@@ -193,14 +188,6 @@ Michael Yeates: <a href="https://www.linkedin.com/in/mdyeates/">LinkedIn</a> | <
 
   <p align="right"><a href="#readme-top">back to top</a></p>
   
-  <!-- ACKNOWLEDGMENTS -->
-  
-  ## Acknowledgments
-
-- [https://example.com](https://example.com)
-
-  <p align="right"><a href="#readme-top">back to top</a></p>
-
   <!-- MARKDOWN LINKS & IMAGES -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/Jake-W95/P1.svg?style=for-the-badge
@@ -218,6 +205,9 @@ Michael Yeates: <a href="https://www.linkedin.com/in/mdyeates/">LinkedIn</a> | <
 
   <!-- UPDATE PLACEHOLDER IMAGES HERE -->
 
-[product-screenshot]: https://placehold.co/600x400?text=Placeholder
+[landing-screenshot]: ./public/images/readme/p1-landing.png
+[standings-screenshot]: ./public/images/readme/p1-standings.png
+[contact-screenshot]: ./public/images/readme/p1-contact.png
+[game-screenshot]: ./public/images/readme/p1-game.png
 [functionality-gif]: https://placehold.co/600x400?text=Placeholder
-[responsive-screenshot]: https://placehold.co/600x400?text=Placeholder
+[responsive-screenshot]: ./public/images/readme/p1-mobile.png
