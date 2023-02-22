@@ -21,8 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "convert-images": "npx imagemin src/images/**/*.{jpg,png} --out-dir=src/images --plugin=imagemin-webp"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
