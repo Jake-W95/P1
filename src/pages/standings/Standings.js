@@ -7,8 +7,6 @@ import "./standings.css";
 // STATE VARIABLES
 function Standings() {
   const [standings, setStandings] = useState([]);
-  const [imageError, setImageError] = useState([]);
-  // const [teamImageError, setTeamImageError] = useState();
   const [showTeamRanking, setShowTeamRanking] = useState(false);
   const [showHeading, setShowHeading] = useState(true);
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
@@ -34,14 +32,6 @@ function Standings() {
     e.target.onError = null;
     e.target.src = `images/drivers/blank.svg`;
   };
-
-  //IF NO TEAM IMAGE JUST DISPLAY TEAM NAME
-  // const handleTeamImageError = (driver) => {
-  //   setTeamImageErrors((prevState) => [
-  //     ...prevState,
-  //     driver.Constructors[0].constructorId,
-  //   ]);
-  // };
 
   const handleTeamImageError = (e) => {
     e.target.onError = null;
