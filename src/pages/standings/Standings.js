@@ -7,7 +7,6 @@ import "./standings.css";
 // STATE VARIABLES
 function Standings() {
   const [standings, setStandings] = useState([]);
-  const [imageError, setImageError] = useState([]);
   const [showTeamRanking, setShowTeamRanking] = useState(false);
   const [showHeading, setShowHeading] = useState(true);
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
