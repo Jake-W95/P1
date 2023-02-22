@@ -14,4 +14,4 @@ function deal(deck) {
     return [hand1, hand2]
 }
 
-module.exports = deal
+export default deal
