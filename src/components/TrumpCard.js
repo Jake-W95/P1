@@ -3,16 +3,11 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-const TrumpCard = ({ player, card, getUserAttVal, getUserAttName, userAttName, getAIAttVal, nextRound, flipAICard}) => {
+const TrumpCard = ({ player, card, getUserAttVal, getUserAttName, userAttName, getAIAttVal, nextRound, flipAICard, AIFlip}) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
   });
-
-  // console.log(card)
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const flipCard = () => setIsFlipped(!isFlipped);
 
 
   const variants = {
@@ -20,58 +15,17 @@ const TrumpCard = ({ player, card, getUserAttVal, getUserAttName, userAttName, g
     visible: { x: 0, opacity: 1 },
   };
 
-  // Dumb data
-  // const experience = 310;
-  // const teamRanking = 3;
-  // const wins = 103;
-  // const podiums = 191;
-  // const championships = 7;
-  //////////////////////////////////////////////////////Rating Algorithm
-  // const driverRating = (function () {
-  //   const winPercentage = (wins / experience) * 100;
-  //   const podiumPercentage = (podiums / experience) * 100;
-  //   const calcExperience = 0.1 * experience;
-  //   const calcTeamRanking = 5 * (10 - teamRanking);
-  //   const calcWins = 0.8 * winPercentage;
-  //   const calcPodiums = 0.4 * podiumPercentage;
-  //   const calcChampionships = 0.8 * championships;
-
-  //   const rating = calcExperience + calcTeamRanking + calcWins + calcPodiums + calcChampionships;
-
-  //   const cappedRating = Math.min(100, rating);
-
-  //   // console.log(rating);
-  //   // console.log(cappedRating);
-
-  //   return Math.round(cappedRating);
-  // })();
-
-  // console.log(isFlipped);
-
-
-
-  // Function logs experience value
-  // const getExpVal = () => { console.log(card.experience) }
-
-  // To be re-declared as attribute is chosen
-  
-
-
 const EXP = card.experience;
 const TRK = card.team_ranking;
 const WIN = card.wins;
 const POD = card.podiums;
 const RTG = card.rating;
-// const CHA = card.championships;
-
 
 if(userAttName === 'Experience'){ getAIAttVal(EXP)};
 if(userAttName === 'Team Ranking'){ getAIAttVal(TRK)};
 if(userAttName === '# of Wins'){ getAIAttVal(WIN)};
 if(userAttName === 'Podiums'){ getAIAttVal(POD)};
 if(userAttName === 'Rating'){ getAIAttVal(RTG)};
-
-
 
   return (
     <motion.div
@@ -83,7 +37,7 @@ if(userAttName === 'Rating'){ getAIAttVal(RTG)};
       animate={inView ? "visible" : "hidden"}
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
-      <motion.div className="front" layout animate={{ rotateY: isFlipped ? 180 : 0 }}>
+      <motion.div className="front" layout animate={{ rotateY: AIFlip ? 180 : 0 }} >
         
         <div className="driver-wrap">
           <img className="team-logo" src={card.team_image} alt="Team" />
@@ -100,7 +54,7 @@ if(userAttName === 'Rating'){ getAIAttVal(RTG)};
             <p className="data experience" >{card.experience}</p>
           </div>
           <div className="divider"></div>
-          <div className="stat-wrap" onClick={() => {getUserAttVal(TRK); getUserAttName('Team Ranking'); nextRound()}}/*onClick={flipCard}*/>
+          <div className="stat-wrap" onClick={() => {getUserAttVal(TRK); getUserAttName('Team Ranking'); nextRound() }}>
             <p className="stat-title">Team Ranking</p>
             <p className="data team">{card.team_ranking}</p>
           </div>
@@ -123,7 +77,7 @@ if(userAttName === 'Rating'){ getAIAttVal(RTG)};
 
         </div>
       </motion.div>
-      <motion.div className="back" onClick={flipCard} layout animate={{ rotateY: isFlipped ? 0 : -180 }}></motion.div>
+      <motion.div className="back" layout animate={{ rotateY: AIFlip ? 0 : -180 }}></motion.div>
     </motion.div>
   );
 };

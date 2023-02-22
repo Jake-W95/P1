@@ -1,7 +1,6 @@
 import Game from "../pages/game/Game"
 
 const WinGame = () => {
-
     return (
         <section>
             <h1>You Won!</h1>
