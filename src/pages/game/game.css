@@ -4,7 +4,83 @@
 
 /* || MEDIA QUERIES FOR LARGER SCREENS */
 
-.game-container {
+.game {
+  padding: var(--spacing);
+  background-color: var(--black);
+}
+
+.game .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game .page-title {
+  color: var(--white);
+}
+
+.instructions-wrap {
+  margin-top: var(--sm-spacing);
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.game-instructions {
+  background-color: #1c1c27;
+  color: var(--white);
+  padding: var(--sm-spacing);
+  border-radius: 2px;
+  margin-bottom: var(--sm-spacing);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-instructions h3 {
+  margin-bottom: var(--sm-spacing);
+  font-size: 25px;
+  letter-spacing: -1.5px;
+}
+
+.instructions-btn {
+  color: var(--white);
+  padding: 12px 24px;
+  border: none;
+  background-color: var(--red);
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-top: var(--sm-spacing);
+}
+
+.show-btn {
+  margin: var(--sm-spacing) auto;
+  margin-top: 0;
+}
+
+.show-btn:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.hide-btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.game-wrap {
+  background-color: #1c1c27;
+  padding: var(--sm-spacing);
+  border-radius: 2px;
+}
+
+.player-wrap {
+  color: var(--white);
+  text-align: center;
+}
+
+.player-wrap h3 {
+  font-size: 22px;
 }
 
 /* --- CARD STYLES --- */
@@ -13,6 +89,7 @@
   height: 530px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .driver-image {
@@ -82,6 +159,12 @@
   background-color: var(--white);
   border-radius: 0px 100px 100px 0px;
   padding: 5px;
+  width: 80%;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.stat-title:hover {
   width: 100%;
 }
 
@@ -102,21 +185,25 @@
   background-image: url("../../../public/images/back.svg");
   background-position: center;
   background-size: cover;
-  height: 567px;
+  height: 510px;
 }
 
 .front,
 .back {
-  cursor: pointer;
   position: absolute;
   backface-visibility: hidden;
   transition: transform 0.2s;
-
   background-color: var(--red);
   width: 350px;
-  border: solid 2px var(--white);
+  border: solid 2px #1c1c27;
   border-radius: 20px;
   padding: 10px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 5px rgba(4, 4, 4, 0.3);
   scale: 0.9;
+}
+
+@media (min-width: 750px) {
+  .test2 {
+    flex-direction: row-reverse;
+  }
 }
