@@ -23,18 +23,23 @@ const Articles = () => {
 
   useEffect(() => {
     const fetchArticles = () => {
-      // const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
-      const NEWS_API_KEY2 = process.env.REACT_APP_NEWS_API_KEY2;
-      fetch(`https://newsapi.org/v2/everything?q=f1&sortBy=relevance&language=en`, {
-        headers: {
-          "x-api-key": NEWS_API_KEY2,
-        },
-      })
+      //const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
+      //const NEWS_API_KEY2 = process.env.REACT_APP_NEWS_API_KEY2;
+      fetch(
+        `https://newsapi.org/v2/everything?q=f1&sortBy=relevance&language=en`,
+        {
+          headers: {
+            "x-api-key": "35b375c55dc24b02b8cfb82232e933d9",
+          },
+        }
+      )
         .then((response) => response.json())
         .then((data) => {
           const articleData = data.articles.slice(0, noOfArticles);
           setArticles(articleData);
-          return Promise.all(articleData.map((article) => fetchArticleImages(article.title)));
+          return Promise.all(
+            articleData.map((article) => fetchArticleImages(article.title))
+          );
         })
         .then((imageUrlsData) => setImageUrls(imageUrlsData))
         .catch((err) => console.error(err));
