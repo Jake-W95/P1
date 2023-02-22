@@ -67,16 +67,19 @@ const Game = () => {
   const flipAICard = () => setAIFlip(!AIFlip)
   const nextRound = () => {
 
-    if (userAttName === 'Team Ranking') {
+    if (userAttVal === AIAttVal && userAttName !== undefined) {
+      increment();
+      increment()
+      flipAICard()
+       return
+          } else if (userAttName === 'Team Ranking') {
       if (userAttVal < AIAttVal) {
         winCard();
         increment();
       } else if (userAttVal > AIAttVal) {
         loseCard();
         increment();
-      } else if (userAttVal === AIAttVal && userAttName !== undefined) {
-        increment();
-      }
+      } 
 
     } else {
       if (userAttVal > AIAttVal) {
@@ -85,10 +88,8 @@ const Game = () => {
       } else if (userAttVal < AIAttVal) {
         loseCard();
         increment();
-      } else if (userAttVal === AIAttVal && userAttName !== undefined) {
-        increment();
-      }
-    }
+      } 
+    } 
     flipAICard()
   }
 
@@ -116,6 +117,7 @@ const Game = () => {
           <div className="row">
             <div className="col-12 col-md-6">
               <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} flipAICard={flipAICard} />
+              <h3>{userAttName}</h3>
               <h1>Cards Remaining:</h1>
               <h2 style={{ textAlign: "center" }}>{hand1.length}</h2>
             </div>

@@ -9,11 +9,6 @@ const TrumpCard = ({ player, card, getUserAttVal, getUserAttName, userAttName, g
     triggerOnce: true,
   });
 
-  
-  // const [isFlipped, setIsFlipped] = useState(false);
-
-  // const flipCard = () => setIsFlipped(!isFlipped);
-
 
   const variants = {
     hidden: { x: player === "user" ? "-50vw" : "50vw", opacity: 0 },
@@ -25,18 +20,12 @@ const TRK = card.team_ranking;
 const WIN = card.wins;
 const POD = card.podiums;
 const RTG = card.rating;
-// const CHA = card.championships;
-
 
 if(userAttName === 'Experience'){ getAIAttVal(EXP)};
 if(userAttName === 'Team Ranking'){ getAIAttVal(TRK)};
 if(userAttName === '# of Wins'){ getAIAttVal(WIN)};
 if(userAttName === 'Podiums'){ getAIAttVal(POD)};
 if(userAttName === 'Rating'){ getAIAttVal(RTG)};
-
-
-
-// console.log({AIFlip})
 
   return (
     <motion.div
@@ -48,7 +37,7 @@ if(userAttName === 'Rating'){ getAIAttVal(RTG)};
       animate={inView ? "visible" : "hidden"}
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
-      <motion.div className="front" layout animate={{ rotateY: AIFlip ? 180 : 0 }} onClick={flipAICard}>
+      <motion.div className="front" layout animate={{ rotateY: AIFlip ? 180 : 0 }} >
         
         <div className="driver-wrap">
           <img className="team-logo" src={card.team_image} alt="Team" />
