@@ -10,11 +10,11 @@ import GameInstructions from "../../components/GameInstructions";
 // GAME LOGIC 
 import shuffleDeal from "../../gameScripts/gameLogic";
 
-
-
 const hands = shuffleDeal()
-const Game = () => {
 
+
+const Game = () => {
+  // Dealt hands
   let hand1 = hands[0];
   let hand2 = hands[1]
 
@@ -28,8 +28,13 @@ const Game = () => {
 
   // State Getting AI's Att Value for comparison
   const [AIAttVal, setAIAttVal] = useState(undefined)
-
   const getAIVal = (AIAttVal) => { setAIAttVal(AIAttVal) }
+
+  const valueReset =() => {
+    setUserAttName(undefined)
+    setUserAttVal(undefined);
+    setAIAttVal(undefined);
+  }
 
 
 
@@ -39,24 +44,20 @@ const Game = () => {
   function winCard() {
     let wonCard = [];
     wonCard = hand2.splice(j, 1);
-
     hand1.splice(hand1.lastIndexOf, 0, wonCard[0])
     seti(i += 2);
-    setUserAttVal(undefined);
-    setAIAttVal(undefined);
+    valueReset()
   }
   function loseCard() {
     let lostCard = [];
     lostCard = hand1.splice(i, 1)
     hand2.splice(hand2.lastIndexOf, 0, lostCard[0])
     setj(j += 2)
-    setUserAttVal(undefined);
-    setAIAttVal(undefined);
+    valueReset()
   }
 
   let [i, seti] = useState(0)
   let [j, setj] = useState(0)
-
 
   const increment = () => {
     i === hand1.length ? seti(0) : seti(i++);
@@ -65,21 +66,24 @@ const Game = () => {
   // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
   const [AIFlip, setAIFlip] = useState(true)
   const flipAICard = () => setAIFlip(!AIFlip)
+
+
   const nextRound = () => {
 
     if (userAttVal === AIAttVal && userAttName !== undefined) {
-      increment();
+      increment()
       increment()
       flipAICard()
-       return
-          } else if (userAttName === 'Team Ranking') {
+      valueReset()
+      //  return
+    } else if (userAttName === 'Team Ranking') {
       if (userAttVal < AIAttVal) {
         winCard();
         increment();
       } else if (userAttVal > AIAttVal) {
         loseCard();
         increment();
-      } 
+      }
 
     } else {
       if (userAttVal > AIAttVal) {
@@ -88,9 +92,10 @@ const Game = () => {
       } else if (userAttVal < AIAttVal) {
         loseCard();
         increment();
-      } 
-    } 
+      }
+    }
     flipAICard()
+    // console.log(userAttVal, userAttName, AIAttVal)
   }
 
   //  Boolean controlling display of game instructions
