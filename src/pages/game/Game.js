@@ -36,6 +36,7 @@ const Game = () => {
   // States Getting User's chosen Att Name and Value
   const [userAttVal, setUserAttVal] = useState(undefined);
   const [userAttName, setUserAttName] = useState(undefined);
+  const [roundResult, setRoundResult] = useState(undefined);
 
   //
   const getUserAttVal = (userAttVal) => {
@@ -66,6 +67,7 @@ const Game = () => {
     seti((i += 2));
     valueReset();
   }
+
   function loseCard() {
     let lostCard = [];
     lostCard = hand1.splice(i, 1);
@@ -95,23 +97,29 @@ const Game = () => {
         increment();
         flipAICard();
         valueReset();
+        setRoundResult("draw");
       } else if (userAttName === "Team Ranking") {
         /////////////////// If Att is Team Ranking, Invert Win/Lose Condition
         if (userAttVal < AIAttVal) {
           winCard();
           increment();
+          setRoundResult("win");
         } else if (userAttVal > AIAttVal) {
           loseCard();
           increment();
+          setRoundResult("lose");
         }
       } else {
         // Normal game conditions
         if (userAttVal > AIAttVal) {
           winCard();
+          setRoundResult("win");
 
           increment();
         } else if (userAttVal < AIAttVal) {
           loseCard();
+          setRoundResult("lose");
+
           increment();
         }
       }
@@ -155,7 +163,7 @@ const Game = () => {
           <div className="col-12 col-md-6">
             <div className="player-wrap">
               <h3>Player 1</h3>
-              <p>Cards left:{hand1.length}</p>
+              <p>{hand1.length} cards remaining</p>
             </div>
             <TrumpCard
               player="user"
@@ -165,11 +173,18 @@ const Game = () => {
               nextRound={nextRound}
               flipAICard={flipAICard}
             />
+            {roundResult && (
+              <div className="round-result">
+                {roundResult === "win" && <p style={{ backgroundColor: "green" }}>You won the card!</p>}
+                {roundResult === "lose" && <p style={{ backgroundColor: "red" }}>You lost the card!</p>}
+                {roundResult === "draw" && <p style={{ backgroundColor: "grey" }}>Draw!</p>}
+              </div>
+            )}
           </div>
           <div className="col-12 col-md-6">
             <div className="player-wrap">
               <h3>Computer</h3>
-              <p>Cards left: {hand2.length}</p>
+              <p>{hand2.length} cards remaining</p>
             </div>
             <TrumpCard
               player="computer"
