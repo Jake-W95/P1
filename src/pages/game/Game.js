@@ -121,7 +121,7 @@ const Game = () => {
           <div className="row">
             <div className="col-12 col-md-6">
               <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} flipAICard={flipAICard} />
-              <h3>{userAttName}</h3>
+              
               <h1>Cards Remaining:</h1>
               <h2 style={{ textAlign: "center" }}>{hand1.length}</h2>
             </div>
