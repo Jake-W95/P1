@@ -25,7 +25,7 @@ const Articles = () => {
     const fetchArticles = () => {
       // const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
       const NEWS_API_KEY2 = process.env.REACT_APP_NEWS_API_KEY2;
-      fetch(`https://newsapi.org/v2/everything?q=f1&sortBy=relevance&language=en&sources=bbc-news`, {
+      fetch(`https://newsapi.org/v2/everything?q=f1&sortBy=relevance&language=en`, {
         headers: {
           "x-api-key": NEWS_API_KEY2,
         },

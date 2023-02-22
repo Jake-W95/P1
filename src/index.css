@@ -51,6 +51,7 @@ body {
   padding: 20px;
   color: var(--white);
   font-style: italic;
+  letter-spacing: -1px;
 }
 
 /* || --- MOBILE STYLES --- */
