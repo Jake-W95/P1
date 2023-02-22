@@ -8,7 +8,7 @@ const WinGame = () => {
     <section className="outcome-container">
       <div className="outcome-wrap">
         <h1>The checkered flag is yours - you've taken P1 in style!</h1>
-        <NavLink to="/game" onClick={handleRestartClick}>
+        <NavLink className="restart-link" to="/game" onClick={handleRestartClick}>
           Restart Game
         </NavLink>
       </div>
