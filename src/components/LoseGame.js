@@ -8,7 +8,7 @@ const LoseGame = () => {
     <section className="outcome-container">
       <div className="outcome-wrap">
         <h1>Don't worry, even Lewis Hamilton has bad days!</h1>
-        <NavLink to="/game" onClick={handleRestartClick}>
+        <NavLink className="restart-link" to="/game" onClick={handleRestartClick}>
           Restart Game
         </NavLink>
       </div>
