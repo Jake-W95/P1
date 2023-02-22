@@ -31,7 +31,7 @@ function shuffleDeal() {
 shuffleDeal()
 
 
-module.exports = shuffleDeal
+export default shuffleDeal
 
 
 
