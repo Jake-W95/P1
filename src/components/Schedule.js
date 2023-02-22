@@ -49,12 +49,12 @@ const Schedule = () => {
   // filter only upcoming races that haven't started yet
   const filteredRaceSchedule = raceSchedule
     .filter((race) => moment(`${race.date} ${race.time}`).isSameOrAfter(moment()))
-    .slice(0, 6);
+    .slice(0, 8);
 
   return (
     <section className="schedule">
       <div className="schedule-container">
-        <h2 className="schedule-title">Upcoming Calendar:</h2>
+        <h2 className="schedule-title">Upcoming Race Calendar:</h2>
         <p className="schedule-countdown"> {timeToNextRace && <span>{timeToNextRace}</span>}</p>
         <div className="schedule-wrapper row">
           {filteredRaceSchedule.map((race) => (

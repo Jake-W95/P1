@@ -28,7 +28,7 @@ const Featured = () => {
         </p>
         <motion.img
           className="landing-image"
-          src="./images/landing-image.jpeg"
+          src="./images/landing-image2.jpeg"
           alt="F1 Heroes"
           ref={ref}
           variants={variants}
