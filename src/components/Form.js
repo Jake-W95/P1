@@ -41,6 +41,7 @@ const Form = () => {
         console.error("There was an error!", error);
         setError(error.message);
       });
+    console.log("yo");
   };
 
   // CLEAR THE FORM AND REMOVE THE ERROR
@@ -54,7 +55,10 @@ const Form = () => {
   };
   return (
     <form className="mailing-form" onSubmit={handleSubmit}>
-      <div className="col-12 col-md-6 form-group" style={{ display: "inline-block" }}>
+      <div
+        className="col-12 col-md-6 form-group"
+        style={{ display: "inline-block" }}
+      >
         <input
           type="text"
           className="form-control"
@@ -66,7 +70,10 @@ const Form = () => {
           onChange={(e) => setName(e.target.value)}
         />
       </div>
-      <div className="col-12 col-md-6 form-group" style={{ display: "inline-block" }}>
+      <div
+        className="col-12 col-md-6 form-group"
+        style={{ display: "inline-block" }}
+      >
         <input
           type="email"
           className="form-control"
