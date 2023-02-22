@@ -30,9 +30,11 @@ const Game = () => {
   const [AIAttVal, setAIAttVal] = useState(undefined)
   const getAIVal = (AIAttVal) => { setAIAttVal(AIAttVal) }
 
-  // const valueReset =() => {
-  //   set
-  // }
+  const valueReset =() => {
+    setUserAttName(undefined)
+    setUserAttVal(undefined);
+    setAIAttVal(undefined);
+  }
 
 
 
@@ -44,18 +46,14 @@ const Game = () => {
     wonCard = hand2.splice(j, 1);
     hand1.splice(hand1.lastIndexOf, 0, wonCard[0])
     seti(i += 2);
-    setUserAttName(undefined)
-    setUserAttVal(undefined);
-    setAIAttVal(undefined);
+    valueReset()
   }
   function loseCard() {
     let lostCard = [];
     lostCard = hand1.splice(i, 1)
     hand2.splice(hand2.lastIndexOf, 0, lostCard[0])
     setj(j += 2)
-    setUserAttName(undefined)
-    setUserAttVal(undefined);
-    setAIAttVal(undefined);
+    valueReset()
   }
 
   let [i, seti] = useState(0)
@@ -76,9 +74,7 @@ const Game = () => {
       increment()
       increment()
       flipAICard()
-      setUserAttName(undefined)
-      setUserAttVal(undefined);
-      setAIAttVal(undefined);
+      valueReset()
       //  return
     } else if (userAttName === 'Team Ranking') {
       if (userAttVal < AIAttVal) {
@@ -99,7 +95,7 @@ const Game = () => {
       }
     }
     flipAICard()
-    console.log(userAttVal, userAttName, AIAttVal)
+    // console.log(userAttVal, userAttName, AIAttVal)
   }
 
   //  Boolean controlling display of game instructions
