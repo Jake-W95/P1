@@ -36,9 +36,6 @@ const Game = () => {
     setAIAttVal(undefined);
   }
 
-
-
-
   // Value Comparison
 
   function winCard() {
@@ -63,39 +60,41 @@ const Game = () => {
     i === hand1.length ? seti(0) : seti(i++);
     j === hand2.length ? setj(0) : setj(j++);
   }
-  // Started thinking of how to set up AI Card flip on user choice, but decided to leave it
+  // Logic to Flip AI Card
   const [AIFlip, setAIFlip] = useState(true)
   const flipAICard = () => setAIFlip(!AIFlip)
 
-
+  //  Incrementation, Win/Lose States and AI Card Flipping
   const nextRound = () => {
+    flipAICard();
+    setTimeout(() => {
 
-    if (userAttVal === AIAttVal && userAttName !== undefined) {
-      increment()
-      increment()
-      flipAICard()
-      valueReset()
-      //  return
-    } else if (userAttName === 'Team Ranking') {
-      if (userAttVal < AIAttVal) {
-        winCard();
-        increment();
-      } else if (userAttVal > AIAttVal) {
-        loseCard();
-        increment();
-      }
-
-    } else {
-      if (userAttVal > AIAttVal) {
-        winCard();
+      // If round is a Draw
+      if (userAttVal === AIAttVal && userAttName !== undefined) {
+        increment()
+        increment()
+        flipAICard()
+        valueReset()
+      } else if (userAttName === 'Team Ranking') {/////////////////// If Att is Team Ranking, Invert Win/Lose Condition
+        if (userAttVal < AIAttVal) {
+          winCard();
+          increment();
+        } else if (userAttVal > AIAttVal) {                      
+          loseCard();
+          increment();
+        }
+      } else {                                                    // Normal game conditions                                                            
+        if (userAttVal > AIAttVal) {
+          winCard();
         increment();
       } else if (userAttVal < AIAttVal) {
         loseCard();
         increment();
       }
     }
-    flipAICard()
-    // console.log(userAttVal, userAttName, AIAttVal)
+  }, 500)
+    
+    
   }
 
   //  Boolean controlling display of game instructions
@@ -103,15 +102,15 @@ const Game = () => {
   //  Function used to toggle showInstructions true/false
   const toggleInstructions = () => setShowInstructions(!showInstructions)
 
-  //  Win State
+  //  Win Game State
   if (hand1.length === 20) {
     return <WinGame />
   }
-  //  Lose State
+  //  Lose Game State
   if (hand2.length === 20) {
     return <LoseGame />
   }
-  //  Game State
+  //  Play Game State
   else {
     return (
       <>
@@ -122,7 +121,7 @@ const Game = () => {
           <div className="row">
             <div className="col-12 col-md-6">
               <TrumpCard player="user" card={hand1[i]} getUserAttVal={getUserAttVal} getUserAttName={getUserAttName} nextRound={nextRound} flipAICard={flipAICard} />
-              <h3>{userAttName}</h3>
+              
               <h1>Cards Remaining:</h1>
               <h2 style={{ textAlign: "center" }}>{hand1.length}</h2>
             </div>
