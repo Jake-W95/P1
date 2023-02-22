@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -55,7 +54,11 @@ const TrumpCard = ({
       animate={inView ? "visible" : "hidden"}
       transition={{ duration: 0.8, ease: "easeInOut", type: "spring" }}
     >
-      <motion.div className="front" layout animate={{ rotateY: AIFlip ? 180 : 0 }}>
+      <motion.div
+        className="front"
+        layout
+        animate={{ rotateY: AIFlip ? 180 : 0 }}
+      >
         <div className="driver-wrap">
           <img className="team-logo" src={card.team_image} alt="Team" />
           <img className="driver-image" src={card.driver_image} alt="Driver" />
@@ -127,7 +130,11 @@ const TrumpCard = ({
           </div>
         </div>
       </motion.div>
-      <motion.div className="back" layout animate={{ rotateY: AIFlip ? 0 : -180 }}></motion.div>
+      <motion.div
+        className="back"
+        layout
+        animate={{ rotateY: AIFlip ? 0 : -180 }}
+      ></motion.div>
     </motion.div>
   );
 };
