@@ -2,7 +2,7 @@ import ArticleCard from "./ArticleCard";
 import { useState, useEffect } from "react";
 
 const Articles = () => {
-  const noOfArticles = 8;
+  const noOfArticles = 10;
   const [articles, setArticles] = useState([]);
   const [imageUrls, setImageUrls] = useState([]);
 
@@ -22,36 +22,16 @@ const Articles = () => {
   };
 
   useEffect(() => {
-    // const fetchArticles = () => {
-    //   //const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
-    //   //const NEWS_API_KEY2 = process.env.REACT_APP_NEWS_API_KEY2;
-    //   fetch(
-    //     `https://newsapi.org/v2/everything?q=f1&sortBy=relevance&language=en`,
-    //     {
-    //       headers: {
-    //         "x-api-key": "35b375c55dc24b02b8cfb82232e933d9",
-    //       },
-    //     }
-    //   )
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //       const articleData = data.articles.slice(0, noOfArticles);
-    //       setArticles(articleData);
-    //       return Promise.all(
-    //         articleData.map((article) => fetchArticleImages(article.title))
-    //       );
-    //     })
-    //     .then((imageUrlsData) => setImageUrls(imageUrlsData))
-    //     .catch((err) => console.error(err));
-    // };
-
     const fetchArticles = () => {
-      const apiKey = "49cabf7a99106c000ebb01cba0299bd9";
-      fetch("https://gnews.io/api/v4/top-headlines?q=formula+one&lang=en&max=8&category=sports&apikey=" + apiKey)
+      //const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
+      // const NEWS_API_KEY2 = process.env.REACT_APP_NEWS_API_KEY2;
+      fetch(`https://newsapi.org/v2/everything?q=f1&sortBy=relevance&language=en`, {
+        headers: {
+          "x-api-key": "35b375c55dc24b02b8cfb82232e933d9",
+        },
+      })
         .then((response) => response.json())
         .then((data) => {
-          console.log("🚀 ~ file: Articles.js:35 ~ .then ~ data:", data);
-
           const articleData = data.articles.slice(0, noOfArticles);
           setArticles(articleData);
           return Promise.all(articleData.map((article) => fetchArticleImages(article.title)));
@@ -59,6 +39,21 @@ const Articles = () => {
         .then((imageUrlsData) => setImageUrls(imageUrlsData))
         .catch((err) => console.error(err));
     };
+
+    // const fetchArticles = () => {
+    //   const apiKey = "49cabf7a99106c000ebb01cba0299bd9";
+    //   fetch("https://gnews.io/api/v4/top-headlines?q=formula+one&lang=en&max=8&category=sports&apikey=" + apiKey)
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //       console.log("🚀 ~ file: Articles.js:35 ~ .then ~ data:", data);
+
+    //       const articleData = data.articles.slice(0, noOfArticles);
+    //       setArticles(articleData);
+    //       return Promise.all(articleData.map((article) => fetchArticleImages(article.title)));
+    //     })
+    //     .then((imageUrlsData) => setImageUrls(imageUrlsData))
+    //     .catch((err) => console.error(err));
+    // };
 
     fetchArticles();
   }, []);
