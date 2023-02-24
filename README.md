@@ -26,7 +26,7 @@ Welcome to P1, your virtual pit stop for the latest updates and standings in the
       <a href="https://github.com/Jake-W95/P1"><strong>Explore the docs »</strong></a>
       <br/>
       <br/>
-      <a href="https://Jake-W95.github.io/P1/">View Live Website</a>
+      <a href="https://p1-heroes.netlify.app/">View Live Website</a>
       ·
       <a href="https://github.com/Jake-W95/P1/issues">Report Bug</a>
       ·
@@ -73,13 +73,13 @@ Welcome to P1, your virtual pit stop for the latest updates and standings in the
   
   ### Screenshots
   
-[![P1 Screen Shot][landing-screenshot]](https://Jake-W95.github.io/P1/)
+[![P1 Screen Shot][landing-screenshot]](https://p1-heroes.netlify.app/)
 
-[![P1 Screen Shot][standings-screenshot]](https://Jake-W95.github.io/P1/)
+[![P1 Screen Shot][standings-screenshot]](https://p1-heroes.netlify.app/)
 
-[![P1 Screen Shot][contact-screenshot]](https://Jake-W95.github.io/P1/)
+[![P1 Screen Shot][contact-screenshot]](https://p1-heroes.netlify.app/)
 
-[![P1 Screen Shot][game-screenshot]](https://Jake-W95.github.io/P1/)
+[![P1 Screen Shot][game-screenshot]](https://p1-heroes.netlify.app/)
 
   <p align="right"><a href="#readme-top">back to top</a></p>
   
@@ -137,7 +137,7 @@ To get a local copy up and running follow these simple example steps.
   
   - As demonstrated in the screenshot below, this application is designed to be responsive and adjust seamlessly to fit various screen sizes
   
-    [![Responsiveness Screenshot][responsive-screenshot]](https://Jake-W95.github.io/P1/)
+    [![Responsiveness Screenshot][responsive-screenshot]](https://p1-heroes.netlify.app/)
   
   <p align="right"><a href="#readme-top">back to top</a></p>
 
